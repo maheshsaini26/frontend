@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koluvu Job Portal - Training Institute Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fafc;
+    }
+    .image{
+        border-radius: 50%;
+        width: 60%;
+        margin-left: 40px;
+    }
+    #center{
+        margin-left: 60px;
+        font-size: 20px;
+    }
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Adjust to match your design */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    font-size: 19px;
+    z-index: 1000; /* Ensures it stays above other elements */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.nav-left, .nav-center, .nav-right {
+    display: flex;
+    align-items: center;
+    
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+    justify-content: flex-start;
+    width: 15%;
+    margin-right: 20px;
+    background-color: #eb9142;
+    font-size: 30px;
+}
+
+.nav-center {
+    justify-content: center;
+    width: 80%;
+    margin-right: 30px;
+    background-color: rgb(204, 204, 229);
+}
+
+.nav-right {
+    justify-content: flex-end;
+    width: 20%;
+    margin-right: 20px;
+    background-color: rgb(170, 234, 170);
+    
+}
+
+.nav-center a, .nav-left a, .nav-right a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            font-size: small;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        #margin{
+            margin-left: 250px;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 100px;
+            text-align: center;
+            margin-left: 110px;
+            margin-right: 100px;
+            font-size: small;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+  </style>
+</head>
+<body >
+    <header>
+        <div class="navbar">
+            <div class="nav-left">
+                <div class="logo"><img src="img/koluvu.jpeg" alt="Koluvu" width="40"></div>
+                <a class="koluvu">Koluvu</a>
+            </div>
+            <div class="nav-center" >
+                <a href="index.html" class="navcentrefont">Home</a>
+                
+                <div class="dropdown">
+                    <a href="jobs.html" class="navcentrefont">Jobs</a>
+                </div>
+                <a href="companies.html" class="navcentrefont">Companies</a>
+                <div class="dropdown">
+                    <a href="#" class="navcentrefont">Services</a>
+                    <div class="dropdown-content">
+                        <a href="resumebuilding.html">Resume Building</a>
+                        <a href="#">AI Mock Interviews</a>
+                        <a href="#">ATS</a>
+                    </div>
+                </div>
+                <a href="hrthreads.html" class="navcentrefont">HRThreads</a>
+                <a href="training.html" class="navcentrefont">Training Institute</a>
+                <a href="#" class="navcentrefont">Govt Job Notifications</a>
+            </div>
+            <div class="nav-right">
+                <a href="traininglogin.html" class="navcentrefont">Login</a>
+                <a href="trainingregistration.html" class="navcentrefont">Register</a>
+                <a href="#" class="navcentrefont">Partner</a>
+            </div>
+        </div>
+    </header>
+    <br><br><br><br>
+  <!-- Navbar -->
+  <nav class="bg-green-500 text-white py-4 px-6 flex justify-between items-center shadow-md">
+    <a href="# "id="margin" class="block py-2 px-4 rounded hover:bg-gray-700 transition">Dashboard</a>
+    <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700 transition">Training Programs</a>
+    <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700 transition">Batch & Schedule</a>
+    <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700 transition">Trainee Enrollment</a>
+    
+    
+    
+  </nav>
+
+  <!-- Sidebar -->
+  <div class="flex">
+    <aside class="w-64 bg-gray-800 text-white min-h-screen py-6 px-4">
+      <nav class="space-y-4">
+        <div class="image"><img src="img/school.jpeg" alt=""></div>
+        
+        
+        <a href="#" id="center" class="block py-2 px-4 rounded hover:bg-gray-700 transition" >Profile</a>
+        <a href="#" id="center" class="block py-2 px-4 rounded hover:bg-gray-700 transition">Blog</a>
+        <a href="#" id="center" class="block py-2 px-4 rounded hover:bg-gray-700 transition">Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8">
+      <h2 class="text-3xl font-semibold text-gray-800 mb-6">Welcome, [Institute Name]!</h2>
+      
+      <!-- Training Programs Section -->
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-bold text-gray-700 mb-4">Training Course Management</h3>
+        <button class="mb-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">Add New Course</button>
+        
+        <div class="space-y-4">
+          <!-- Example Course List -->
+          <div class="border p-4 rounded-lg shadow-sm bg-gray-50">
+            <h4 class="text-xl font-semibold text-gray-800">Course Title 1</h4>
+            <p class="text-gray-600 text-sm">Description: This is a brief description of the course.</p>
+            <div class="flex justify-between items-center mt-2">
+              <span class="text-sm text-gray-500">Duration: 6 weeks</span>
+              <div>
+                <button class="bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 transition">Edit</button>
+                <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition">Delete</button>
+              </div>
+            </div>
+          </div>
+          <div class="border p-4 rounded-lg shadow-sm bg-gray-50">
+            <h4 class="text-xl font-semibold text-gray-800">Course Title 2</h4>
+            <p class="text-gray-600 text-sm">Description: This is another course description.</p>
+            <div class="flex justify-between items-center mt-2">
+              <span class="text-sm text-gray-500">Duration: 3 weeks</span>
+              <div>
+                <button class="bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 transition">Edit</button>
+                <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+        
+        <div class="footer-section">
+            <h3 >About Us</h3>
+            <ul>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy & Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Resume Building - ATS</a></li>
+                <li><a href="#">AI - Model Detection</a></li>
+                <li><a href="#">ATS</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 >Koluvu Jeevans</h3>
+            <p>Reach!!</p>
+        </div>
+        <div class="footer-section">
+            <h3>Koluvu Videology</h3>
+            <p>Training</p>
+        </div>
+        <div class="footer-section">
+            <h3 >Social Media</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><img src="img/fb.jpg" alt="" width="20"></a> <!-- Facebook -->
+                <a href="https://www.twitter.com/"><img src="img/x.jpg" alt="" width="20"></a> <!-- Twitter -->
+                <a href="https://www.linkedin.com/"><img src="img/linkedin.jpg" alt="" width="20"></a> <!-- LinkedIn -->
+                <a href="https://www.instagram.com/"><img src="img/insta.png" alt="" width="20"></a> <!-- Instagram -->
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

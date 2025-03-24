@@ -1,0 +1,173 @@
+/* Responsive Styles */
+
+/* Large screens (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1200px) {
+    .nav-left {
+        width: 15%;
+    }
+    
+    .nav-center {
+        width: 65%;
+    }
+    
+    .nav-right {
+        width: 20%;
+    }
+    
+    .analytics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Medium screens (tablets, 768px and up) */
+@media only screen and (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .sidebar ul li {
+        margin: 5px;
+        width: calc(33.333% - 10px);
+    }
+    
+    .nav-left {
+        width: 20%;
+    }
+    
+    .nav-center {
+        width: 50%;
+    }
+    
+    .nav-right {
+        width: 30%;
+    }
+    
+    .navcentrefont {
+        font-size: 16px;
+    }
+}
+
+/* Small screens (mobile phones, 600px and up) */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 5px 10px;
+    }
+    
+    .nav-left {
+        width: 80%;
+        margin-right: 0;
+    }
+    
+    .menu-toggle {
+        display: flex;
+        width: 20%;
+        justify-content: flex-end;
+    }
+    
+    .nav-center, .nav-right {
+        display: none;
+        width: 100%;
+        margin-right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+    
+    .nav-center.active, .nav-right.active {
+        display: flex;
+    }
+    
+    .nav-center a, .nav-right a {
+        margin: 8px 0;
+        width: 100%;
+    }
+    
+    .dropdown {
+        width: 100%;
+    }
+    
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        display: block;
+        box-shadow: none;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        max-height: 500px;
+    }
+    
+    .analytics {
+        grid-template-columns: 1fr;
+    }
+    
+    .candidate {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .candidate button {
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    .sidebar ul li {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .dashboard-header .icons {
+        margin-top: 10px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        margin: 15px 0;
+    }
+}
+
+/* Extra small screens */
+@media only screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .main-content {
+        padding: 15px;
+    }
+    
+    .koluvu {
+        font-size: 24px;
+    }
+    
+    .table-responsive {
+        overflow-x: scroll;
+    }
+    
+    .job-listings th, .job-listings td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}

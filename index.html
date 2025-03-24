@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koluvu Job Portal</title>
+    <link rel="stylesheet" href="style.css">
+
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px; /* Slightly increased for more space */
+    gap: 20px;
+}
+
+
+.left-section, .right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 30%; /* Make space for wider videos */
+    min-height: 100vh;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+}
+.right-section{
+    margin-right: 10px;
+}
+
+video {
+    width: 140%; /* Take full width of the parent container */
+    max-width: 140%; /* Allow it to expand fully */
+    height: 160px; /* Fixed height to prevent vertical expansion */
+    border-radius: 15px;
+    margin-left: 5px;
+    object-fit: cover; /* Ensures video fills width without stretching */
+    transition: transform 0.3s ease-in-out;
+}
+
+video:hover {
+    transform: scaleX(1.08); /* Expand only horizontally */
+}
+
+
+img{
+    border-radius: 10px;
+}
+    </style>
+    <style>
+        .row {
+            
+            margin-bottom: 10px;
+            margin-right: 20px;
+        }
+
+        .column {
+
+            background: white;
+            margin-right: 10px;
+            
+        }
+        .purple{
+            color: #6A38C2;
+            font-size: 18px;
+        }
+    </style>
+
+    <style>
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 100px;
+            text-align: center;
+            
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .koluvu{
+            font-size: 30px;
+        }
+        .navcentrefont{
+            font-size: 20px;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            font-size: small;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-left">
+                <div class="logo"><img src="img/koluvu.jpeg" alt="Koluvu" width="40"></div>
+                <a class="koluvu">Koluvu</a>
+            </div>
+            <div class="nav-center" >
+                <a href="index.html" class="navcentrefont">Home</a>
+                
+                <div class="dropdown">
+                    <a href="jobs.html" class="navcentrefont">Jobs</a>
+                </div>
+                <a href="companies.html" class="navcentrefont">Companies</a>
+                <div class="dropdown">
+                    <a href="services.html" class="navcentrefont">Services</a>
+                    <div class="dropdown-content">
+                        <a href="https://koluvuairesume.netlify.app/">Resume Building</a>
+                        <a href="#">AI Mock Interviews</a>
+                        <a href="#">ATS</a>
+                    </div>
+                </div>
+                <a href="hrthreadsregister.html" class="navcentrefont">HRThreads</a>
+                <a href="trainingregistration.html" class="navcentrefont">Training Institute</a>
+                <a href="#" class="navcentrefont">Govt Job Notifications</a>
+            </div>
+            <div class="nav-right">
+                <a href="register.html" class="navcentrefont">Employee</a>
+                <a href="employerregister.html" class="navcentrefont">Employer</a>
+                <a href="partnerregister.html" class="navcentrefont">Partner</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="left-section">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3 ></h3>
+            <video src="video/video1.mp4" controls></video><br>
+
+            <h3>Training Institute</h3>
+            <video src="video/video2.mp4" controls></video><br>
+            <video src="video/video1.mp4" controls></video><br>
+            <video src="path/to/video6.mp4" controls></video>
+        </div>
+
+        <div class="center-section">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="container">
+                
+                <div class="overlay">
+                    <h1>"Connecting Jobs, Creating Futures"</h1>
+                    <p class="gateway">Your gateway to finding the right job and building a brighter future.</p>
+                    
+                </div>
+            </div>
+            <br>
+            <br>
+            <h2 class="jp">NO.1 Job Searching Portal</h2>
+            
+            
+            
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Designation">
+                <input type="text" placeholder="Experience">
+                <input type="text" placeholder="Location">
+                <button>Search</button>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <h3 class="purple">Top Fresher Jobs</h3>
+                        <div class="job-box">
+                            
+                            <p>Company: ABC Tech</p>
+                            <p>Location: Remote</p>
+                            <p>Job Type: Full-Time</p>
+                            <p>Salary: $80,000/year</p>
+                        </div>
+            
+                        <div class="job-box">
+                            
+                            <p>Company: XYZ Solutions</p>
+                            <p>Location: Remote</p>
+                            <p>Job Type: Contract</p>
+                            <p>Salary: $60,000/year</p>
+                        </div>
+                        
+                        <div class="job-box">
+                            
+                            <p>Company: ABC Tech</p>
+                            <p>Location: Remote</p>
+                            <p>Job Type: Full-Time</p>
+                            <p>Salary: $80,000/year</p>
+                        </div>
+            
+                        <div class="job-box">
+                            
+                            <p>Company: XYZ Solutions</p>
+                            <p>Location: Remote</p>
+                            <p>Job Type: Contract</p>
+                            <p>Salary: $60,000/year</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h3 class="purple">Top Work from Jobs</h3>
+                        <div class="job-box">
+                            
+                            <p>Company: ABC Tech</p>
+                            <p>Location: Remote</p>
+                            <p>Job Type: Full-Time</p>
+                            <p>Salary: $80,000/year</p>
+                        </div>
+            
+                        <div class="job-box">
+                            
+                            <p>Company: XYZ Solutions</p>
+                            <p>Location: Remote</p>
+                            <p>Job Type: Contract</p>
+                            <p>Salary: $60,000/year</p>
+                        </div>
+
+                        <div class="job-box">
+                            
+                            <p>Company: ABC Tech</p>
+                            <p>Location: Remote</p>
+                            <p>Job Type: Full-Time</p>
+                            <p>Salary: $80,000/year</p>
+                        </div>
+            
+                        <div class="job-box">
+                            
+                            <p>Company: XYZ Solutions</p>
+                            <p>Location: Remote</p>
+                            <p>Job Type: Contract</p>
+                            <p>Salary: $60,000/year</p>
+                        </div>
+                       
+                    </div>
+                    <div class="column">
+                        <h3 class="purple">Top Training Institutes</h3>
+                        <div class="training-box">
+                            <h4>ABC Training Center</h4>
+                            <p>Location: New York</p>
+                            <p>Courses: Web Development, Data Science</p>
+                            <p>Duration: 6 Months</p>
+                            <p>Fee: $1000</p>
+                        </div>
+                        <div class="training-box">
+                            <h4>XYZ Academy</h4>
+                            <p>Location: Los Angeles</p>
+                            <p>Courses: Cloud Computing, AI & ML</p>
+                            <p>Duration: 3 Months</p>
+                            <p>Fee: $1500</p>
+                        </div>
+
+                        <div class="training-box">
+                            <h4>ABC Training Center</h4>
+                            <p>Location: New York</p>
+                            <p>Courses: Web Development, Data Science</p>
+                            <p>Duration: 6 Months</p>
+                            <p>Fee: $1000</p>
+                        </div>
+                        <div class="training-box">
+                            <h4>XYZ Academy</h4>
+                            <p>Location: Los Angeles</p>
+                            <p>Courses: Cloud Computing, AI & ML</p>
+                            <p>Duration: 3 Months</p>
+                            <p>Fee: $1500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <div class="column">
+                        <h3 class="purple">Top Experience Jobs</h3>
+                        
+                        <div class="job-box">
+                            
+                            <p>Company: ABC Tech</p>
+                            <p>Location: Hyderabad</p>
+                            <p>Job Type: Full-Time</p>
+                            <p>Salary: $80,000/year</p>
+                        </div>
+            
+                        <div class="job-box">
+                            
+                            <p>Company: XYZ Solutions</p>
+                            <p>Location: Mumbai</p>
+                            <p>Job Type: Contract</p>
+                            <p>Salary: $60,000/year</p>
+                        </div>
+
+                        <div class="job-box">
+                            
+                            <p>Company: ABC Tech</p>
+                            <p>Location: Hyderabad</p>
+                            <p>Job Type: Full-Time</p>
+                            <p>Salary: $80,000/year</p>
+                        </div>
+            
+                        <div class="job-box">
+                            
+                            <p>Company: XYZ Solutions</p>
+                            <p>Location: Mumbai</p>
+                            <p>Job Type: Contract</p>
+                            <p>Salary: $60,000/year</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h3 class="purple">Top Internship Opportunities</h3>
+                        
+                            <div class="internship-box">
+                                <p>Internship: Web Developer</p>
+                                <p>Company: Tech Solutions</p>
+                                <p>Duration: 6 Months</p>
+                                <p>Stipend: $500/month</p>
+                            </div>
+                
+                            <div class="internship-box">
+                                <p>Internship: Data Analyst</p>
+                                <p>Company: Analytics Hub</p>
+                                <p>Duration: 3 Months</p>
+                                <p>Stipend: $400/month</p>
+                            </div>
+
+                            <div class="internship-box">
+                                <p>Internship: Web Developer</p>
+                                <p>Company: Tech Solutions</p>
+                                <p>Duration: 6 Months</p>
+                                <p>Stipend: $500/month</p>
+                            </div>
+                
+                            <div class="internship-box">
+                                <p>Internship: Data Analyst</p>
+                                <p>Company: Analytics Hub</p>
+                                <p>Duration: 3 Months</p>
+                                <p>Stipend: $400/month</p>
+                            </div>
+
+                        
+                    </div>
+                    <div class="column">
+                        <h3 class="purple">Top Companies</h3>
+                        <ul>
+                            <p><img src="img/microsoft.png" alt="" width="200"><br>Microsoft</p>
+                            <p><img src="img/google.png" alt="" width="150"><br>Google</p>
+                        </ul>
+                        <ul>
+                            <p><img src="img/microsoft.png" alt="" width="200"><br>Microsoft</p>
+                            <p><img src="img/google.png" alt="" width="150"><br>Google</p>
+                        </ul>
+
+                        
+                        <ul>
+                            <p><img src="img/microsoft.png" alt="" width="200"><br>Microsoft</p>
+                            <p><img src="img/google.png" alt="" width="150"><br>Google</p>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            </ul>
+        </div>
+
+        <div class="right-section">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3></h3>
+            <video src="video/video2.mp4" controls></video><br>
+            <h3>Internship Opportunity</h3>
+            <video src="video/video1.mp4" controls></video><br>
+            <video src="path/to/video6.mp4" controls></video><br>
+            <video src="path/to/video6.mp4" controls></video>
+        </div>
+    </div>
+
+    <div class="faq-container">
+        <h2>FAQ</h2>
+        <div class="faq-item">
+            <div class="faq-question">What is Koluvu?</div>
+            <div class="faq-answer">Koluvu is a job portal that connects job seekers with employers by providing a seamless platform for job listings, applications, and hiring.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How does Koluvu work?</div>
+            <div class="faq-answer">Employers post job openings, and job seekers can browse listings, apply for jobs, and track their applications. Employers can also search for candidates based on their profiles and qualifications.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Is Koluvu free to use?</div>
+            <div class="faq-answer">Koluvu offers both free and premium plans. Job seekers can create profiles and apply for jobs for free. Employers can post a limited number of jobs for free, with premium options for enhanced visibility and additional features.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">The website is not working properly. What should I do?</div>
+            <div class="faq-answer">Try clearing your browser cache and cookies or accessing the site from a different browser. If the issue persists, contact our Support Team at support@koluvu.com.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How do I improve my chances of getting hired?</div>
+            <div class="faq-answer">Keep your profile updated, upload a professional resume and cover letter, and apply to relevant jobs based on your skills and experience.</div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+    <div class="container">
+        <!-- Left Section -->
+        <div class="section left">
+            <h2>Bhuvih HR Solutions Pvt Ltd</h2>
+        </div>
+        
+        <!-- Middle Section -->
+        <div class="section middle">
+            <p>All trademarks are the property of their owners.</p>
+            <p>All rights reserved © 2025 Bhuvih HR Solutions Pvt Ltd.</p>
+        </div>
+        
+        <!-- Right Section - Carousel -->
+        <div class="section right">
+            <div class="carousel">
+                <div class="carousel-content active">
+                    <h3>KoluvuJobs</h3>
+                    <p>Connecting job seekers with employers.</p>
+                </div>
+                <div class="carousel-content">
+                    <h3>Koluvu's Jeetam</h3>
+                    <p>Smart payroll solutions for businesses.</p>
+                </div>
+                <div class="carousel-content">
+                    <h3>Koluvu Kendra</h3>
+                    <p>A platform for career development.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="footer-section">
+                <h3 >About Us</h3>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy & Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Resume Building - ATS</a></li>
+                    <li><a href="#">AI - Model Detection</a></li>
+                    <li><a href="#">ATS</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 >Koluvu Jeevans</h3>
+                <p>Reach!!</p>
+            </div>
+            <div class="footer-section">
+                <h3>Koluvu Videology</h3>
+                <p>Training</p>
+            </div>
+            <div class="footer-section">
+                <h3 >Social Media</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/"><img src="img/fb.jpg" alt="" width="20"></a> <!-- Facebook -->
+                    <a href="https://www.twitter.com/"><img src="img/x.jpg" alt="" width="20"></a> <!-- Twitter -->
+                    <a href="https://www.linkedin.com/"><img src="img/linkedin.jpg" alt="" width="20"></a> <!-- LinkedIn -->
+                    <a href="https://www.instagram.com/"><img src="img/insta.png" alt="" width="20"></a> <!-- Instagram -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let index = 0;
+        function showSlides() {
+            let slides = document.querySelectorAll(".carousel-content");
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                if (i === index) slide.classList.add("active");
+            });
+            index = (index + 1) % slides.length;
+        }
+        setInterval(showSlides, 3000);
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

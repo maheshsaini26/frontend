@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Threads Dashboard</title>
+    <link rel="stylesheet" href="">
+    <script defer src=""></script>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 80px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #007bff;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.question-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.post {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 99%;
+    background-color: #fff; /* Adjust to match your design */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    font-size: 10px;
+    z-index: 1000; /* Ensures it stays above other elements */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-left, .nav-center, .nav-right {
+    display: flex;
+    align-items: center;
+    
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+    justify-content: flex-start;
+    width: 15%;
+    margin-right: 30px;
+    background-color: #eb9142;
+}
+
+.nav-center {
+    justify-content: center;
+    width: 70%;
+    margin-right: 30px;
+    background-color: rgb(204, 204, 229);
+}
+
+.nav-right {
+    justify-content: flex-end;
+    width: 20%;
+    margin-right: 30px;
+
+    background-color: rgb(170, 234, 170);
+    
+}
+
+.nav-center a, .nav-left a, .nav-right a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            font-size: small;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+.koluvu{
+            font-size: 30px;
+        }
+        .navcentrefont{
+            font-size: 18px;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 100px;
+            text-align: center;
+            margin-right: 20px;
+            margin-left: 20px;
+            
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-left">
+                <div class="logo"><img src="img/koluvu.jpeg" alt="Koluvu" width="40"></div>
+                <a class="koluvu">Koluvu</a>
+            </div>
+            <div class="nav-center" >
+                <a href="index.html" class="navcentrefont">Home</a>
+                
+                <div class="dropdown">
+                    <a href="jobs.html" class="navcentrefont">Jobs</a>
+                </div>
+                <a href="companies.html" class="navcentrefont">Companies</a>
+                <div class="dropdown">
+                    <a href="#" class="navcentrefont">Services</a>
+                    <div class="dropdown-content">
+                        <a href="resumebuilding.html">Resume Building</a>
+                        <a href="#">AI Mock Interviews</a>
+                        <a href="#">ATS</a>
+                    </div>
+                </div>
+                <a href="hrthreadsregister.html" class="navcentrefont">HRThreads</a>
+                <a href="trainingregistration.html" class="navcentrefont">Training Institute</a>
+                <a href="#" class="navcentrefont">Govt Job Notifications</a>
+            </div>
+            <div class="nav-right">
+                <a href="register.html" class="navcentrefont">Employee</a>
+                <a href="employerregister.html" class="navcentrefont">Employer</a>
+                <a href="partnerregister.html" class="navcentrefont">Partner</a>
+            </div>
+        </div>
+    </header>
+    <br><br><br><br><br><br><br>
+    <div class="container">
+        
+        <div class="header">
+            <h1>HR Threads Dashboard</h1>
+            
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search discussions...">
+            <button class="search-btn">🔍</button>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('questions')">Q&A</button>
+            <button class="tab" onclick="showTab('posts')">Posts</button>
+            <button class="tab" onclick="showTab('blog')">Blog</button>
+        </div>
+        
+        <div id="questions" class="tab-content">
+            <div class="question-box">
+                <textarea id="questionInput" placeholder="Ask an HR-related question..."></textarea>
+                <button onclick="postQuestion()">➕ Ask Question</button>
+            </div>
+            <div id="postsList">
+                <div class="post">
+                    <h3>Best practices for hiring remote employees?</h3>
+                    <p>By John Doe • 5 responses</p>
+                    <button class="view-btn">💬 View</button>
+                </div>
+                <div class="post">
+                    <h3>How to structure an effective compensation plan?</h3>
+                    <p>By Jane Smith • 3 responses</p>
+                    <button class="view-btn">💬 View</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="posts" class="tab-content" style="display: none;">
+            <p>HR professionals can share updates and insights here.</p>
+        </div>
+        
+        <div id="blog" class="tab-content" style="display: none;">
+            <p>Explore and contribute to HR blogs.</p>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.style.display = 'none';
+    });
+    document.getElementById(tabName).style.display = 'block';
+
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    document.querySelector(`[onclick="showTab('${tabName}')"]`).classList.add('active');
+}
+
+function postQuestion() {
+    let questionInput = document.getElementById("questionInput");
+    let questionText = questionInput.value.trim();
+    
+    if (questionText) {
+        let newPost = document.createElement("div");
+        newPost.className = "post";
+        newPost.innerHTML = `<h3>${questionText}</h3><p>By You • 0 responses</p><button class="view-btn">💬 View</button>`;
+        document.getElementById("postsList").prepend(newPost);
+        questionInput.value = "";
+    }
+}
+
+    </script>
+
+<footer class="footer">
+    <div class="footer-container">
+        
+        <div class="footer-section">
+            <h3 >About Us</h3>
+            <ul>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy & Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Resume Building - ATS</a></li>
+                <li><a href="#">AI - Model Detection</a></li>
+                <li><a href="#">ATS</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3 >Koluvu Jeevans</h3>
+            <p>Reach!!</p>
+        </div>
+        <div class="footer-section">
+            <h3>Koluvu Videology</h3>
+            <p>Training</p>
+        </div>
+        <div class="footer-section">
+            <h3 >Social Media</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><img src="img/fb.jpg" alt="" width="20"></a> <!-- Facebook -->
+                <a href="https://www.twitter.com/"><img src="img/x.jpg" alt="" width="20"></a> <!-- Twitter -->
+                <a href="https://www.linkedin.com/"><img src="img/linkedin.jpg" alt="" width="20"></a> <!-- LinkedIn -->
+                <a href="https://www.instagram.com/"><img src="img/insta.png" alt="" width="20"></a> <!-- Instagram -->
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
