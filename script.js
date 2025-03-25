@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let rightSection = document.querySelector(".right-section");
     let footer = document.querySelector(".footer");
     
-    let stopPoint = footer.offsetTop - leftSection.offsetHeight - 550; // Stop before footer
+    let stopPoint = footer.offsetTop - leftSection.offsetHeight - 1000; // Stop before footer
     
     window.addEventListener("scroll", function () {
         let scrollY = window.scrollY;
