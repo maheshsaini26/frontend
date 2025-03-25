@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koluvu Job Portal</title>
+    <link rel="stylesheet" href="syles1.css">
+
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px; /* Slightly increased for more space */
+    gap: 20px;
+}
+
+
+.left-section, .right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 30%; /* Make space for wider videos */
+    min-height: 100vh;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+}
+.right-section{
+    margin-right: 10px;
+}
+
+video {
+    width: 140%; /* Take full width of the parent container */
+    max-width: 140%; /* Allow it to expand fully */
+    height: 160px; /* Fixed height to prevent vertical expansion */
+    border-radius: 15px;
+    
+    margin-left: 5px;
+    object-fit: cover; /* Ensures video fills width without stretching */
+    transition: transform 0.3s ease-in-out;
+}
+
+video:hover {
+    transform: scaleX(1.08); /* Expand only horizontally */
+}
+
+
+img{
+    border-radius: 10px;
+}
+    </style>
+    <style>
+        .row {
+            
+            margin-bottom: 10px;
+            margin-right: 20px;
+        }
+
+        .column {
+
+            background: white;
+            margin-right: 10px;
+            
+        }
+        .purple{
+            color: #6A38C2;
+            font-size: 18px;
+        }
+        
+    </style>
+
+    <style>
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 100px;
+            text-align: center;
+            
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+        }
+
+        .footer-section h3 {
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .koluvu{
+            font-size: 30px;
+        }
+        .navcentrefont{
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-left">
+                <div class="logo"><img src="img/koluvu.jpeg" alt="Koluvu" width="40"></div>
+                <a class="koluvu">Koluvu</a>
+            </div>
+            <div class="nav-center" >
+                <a href="index.html" class="navcentrefont">Home</a>
+                <a href="#" class="navcentrefont">Jobs</a>
+                <a href="#" class="navcentrefont">Companies</a>
+                <a href="#" class="navcentrefont">Services</a>
+                <a href="hrthreads.html" class="navcentrefont">HRThreads</a>
+                <a href="#" class="navcentrefont">Training Institute</a>
+                <a href="#" class="navcentrefont">Govt Job Notifications</a>
+            </div>
+            <div class="nav-right">
+                <a href="login.html" class="navcentrefont">Login</a>
+                <a href="register.html" class="navcentrefont">Register</a>
+                <a href="#" class="navcentrefont">Partner</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="left-section">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3 class="">Training Institute</h3>
+            <video src="video/video1.mp4" controls></video><br>
+
+            <h3>Job Advertisement</h3>
+            <video src="video/video2.mp4" controls></video><br>
+            <video src="video/video1.mp4" controls></video><br>
+            <video src="path/to/video6.mp4" controls></video>
+        </div>
+
+        <div class="center-section">
+            <h2 class="jp">NO.1 Job Searching Portal</h2>
+            <div class="search-bar">
+                <input type="text" placeholder="Designation">
+                <input type="text" placeholder="Experience">
+                <input type="text" placeholder="Location">
+                <button>Search</button>
+            </div>
+
+            <div class="row">
+                <!-- Top Fresher Jobs -->
+                <div class="category-row">
+                    <h3 class="purple">Top Fresher Jobs</h3>
+                    <div class="category-column">
+                        <div class="job-box"><p>Company: XYZ Solutions</p>
+                            <p>Location: Remote</p>
+                            <p>Job Type: Contract</p>
+                            <p>Salary: $60,000/year</p></div>
+                        <div class="job-box"><p>Company: XYZ Solutions</p>
+                            <p>Location: Remote</p>
+                            <p>Job Type: Contract</p>
+                            <p>Salary: $60,000/year</p></div>
+                        <div class="job-box"><p>Company: XYZ Solutions</p>
+                            <p>Location: Remote</p>
+                            <p>Job Type: Contract</p>
+                            <p>Salary: $60,000/year</p></div>
+                    </div>
+                </div>
+            
+                <!-- Top Experience Jobs -->
+                <div class="category-row">
+                    <h3 class="purple">Top Experience Jobs</h3>
+                    <div class="category-column">
+                        <div class="job-box"><p>Company: XYZ Solutions</p>
+                            <p>Location: Remote</p>
+                            <p>Job Type: Contract</p>
+                            <p>Salary: $60,000/year</p></div>
+                        <div class="job-box">...</div>
+                        <div class="job-box">...</div>
+                    </div>
+                </div>
+                <div class="category-row">
+                    <h3 class="purple">Top Experience Jobs</h3>
+                    <div class="category-column">
+                        <div class="job-box">...</div>
+                        <div class="job-box">...</div>
+                        <div class="job-box">...</div>
+                    </div>
+                </div>
+                <div class="category-row">
+                    <h3 class="purple">Top Experience Jobs</h3>
+                    <div class="category-column">
+                        <div class="job-box">...</div>
+                        <div class="job-box">...</div>
+                        <div class="job-box">...</div>
+                    </div>
+                </div>
+                <div class="category-row">
+                    <h3 class="purple">Top Experience Jobs</h3>
+                    <div class="category-column">
+                        <div class="job-box">...</div>
+                        <div class="job-box">...</div>
+                        <div class="job-box">...</div>
+                    </div>
+                </div>
+                <!-- Repeat for other categories -->
+                 
+            </div>
+            
+            
+        </div>
+
+        <div class="right-section">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3>Internship Opportunity</h3>
+            <video src="video/video2.mp4" controls></video><br>
+            <h3>Job Advertisement</h3>
+            <video src="video/video1.mp4" controls></video><br>
+            <video src="path/to/video6.mp4" controls></video><br>
+            <video src="path/to/video6.mp4" controls></video>
+        </div>
+    </div>
+
+    <div class="faq-container">
+        <h2>FAQ</h2>
+        <div class="faq-item">
+            <div class="faq-question">What is Koluvu?</div>
+            <div class="faq-answer">Koluvu is a job portal that connects job seekers with employers by providing a seamless platform for job listings, applications, and hiring.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How does Koluvu work?</div>
+            <div class="faq-answer">Employers post job openings, and job seekers can browse listings, apply for jobs, and track their applications. Employers can also search for candidates based on their profiles and qualifications.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Is Koluvu free to use?</div>
+            <div class="faq-answer">Koluvu offers both free and premium plans. Job seekers can create profiles and apply for jobs for free. Employers can post a limited number of jobs for free, with premium options for enhanced visibility and additional features.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">The website is not working properly. What should I do?</div>
+            <div class="faq-answer">Try clearing your browser cache and cookies or accessing the site from a different browser. If the issue persists, contact our Support Team at support@koluvu.com.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How do I improve my chances of getting hired?</div>
+            <div class="faq-answer">Keep your profile updated, upload a professional resume and cover letter, and apply to relevant jobs based on your skills and experience.</div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+    <div class="foo">
+        <h3 class="Bhuvih">Bhuvih HR 
+            <span class="small">All trademarks are the property of their respective owners</span>
+            <br><span class="sol">Solutions Pvt Ltd</span> 
+            <span class="small">All rights reserved © 2025 Bhuvih HR Solutions Pvt Ltd.</span>
+        </h3>
+        
+        <div class="businesses">
+            <h3>Our Businesses</h3>
+            
+                <li>
+                    <a href="#">Koluvu's Jeetam</a>
+                </li>
+                <li>
+                    <a href="#">Koluvu's Vidyalaya</a>
+                </li>
+            
+        </div>
+    </div>
+    <br>
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="footer-section">
+                <h3 >About Us</h3>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy & Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Resume Building - ATS</a></li>
+                    <li><a href="#">AI - Model Detection</a></li>
+                    <li><a href="#">ATS</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 >Koluvu Jeevans</h3>
+                <p>Reach!!</p>
+            </div>
+            <div class="footer-section">
+                <h3>Koluvu Videology</h3>
+                <p>Training</p>
+            </div>
+            <div class="footer-section">
+                <h3 >Social Media</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/"><img src="img/fb.jpg" alt="" width="20"></a> <!-- Facebook -->
+                    <a href="https://www.twitter.com/"><img src="img/x.jpg" alt="" width="20"></a> <!-- Twitter -->
+                    <a href="https://www.linkedin.com/"><img src="img/linkedin.jpg" alt="" width="20"></a> <!-- LinkedIn -->
+                    <a href="https://www.instagram.com/"><img src="img/insta.png" alt="" width="20"></a> <!-- Instagram -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
