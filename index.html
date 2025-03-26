@@ -46,7 +46,6 @@ video {
     max-width: 140%; /* Allow it to expand fully */
     height: 160px; /* Fixed height to prevent vertical expansion */
     border-radius: 15px;
-    
     margin-left: 5px;
     object-fit: cover; /* Ensures video fills width without stretching */
     transition: transform 0.3s ease-in-out;
@@ -62,6 +61,55 @@ img{
 }
     </style>
     <style>
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fa7f04; /* Saffron Orange */
+            padding: 15px 30px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            margin-right: 200px;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+            margin-right: 100px;
+            
+        }
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .auth-buttons a {
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .login {
+            background-color: green;
+            color: white;
+        }
+        .register {
+            background-color: green;
+            color: white;
+        }
+        .partner {
+            background-color: green; /* Dark Green */
+            color: white;
+            margin-right: 50px;
+        }
         .row {
             
             margin-bottom: 10px;
@@ -82,49 +130,40 @@ img{
     </style>
 
     <style>
-        .footer {
-            background-color: #343a40;
+         .footer {
+            background-color: green; /* Dark Green */
             color: white;
-            padding: 20px 100px;
-            text-align: center;
-            
-        }
-
-        .footer-container {
+            padding: 20px;
             display: flex;
+            justify-content: space-between;
             flex-wrap: wrap;
-            justify-content: space-around;
-            max-width: 1200px;
-            margin: auto;
+            text-align: left;
         }
-
-        .footer-section {
-            flex: 1;
-            min-width: 200px;
+        .footer div {
             margin: 10px;
         }
-
-        .footer-section h3 {
-            border-bottom: 2px solid white;
+        .footer h3 {
+            border-bottom: 2px solid orange;
             padding-bottom: 5px;
         }
-
-        .footer-section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-section ul li {
-            margin: 8px 0;
-        }
-
-        .footer-section ul li a {
+        .footer a {
             color: white;
             text-decoration: none;
+            display: block;
+            margin: 5px 0;
         }
-
-        .footer-section ul li a:hover {
-            text-decoration: underline;
+        .footer a:hover {
+            color: orange;
+        }
+        .social-icons a {
+            margin-right: 10px;
+        }
+        .copyright {
+            text-align: center;
+            background-color: orange; /* Darker Green */
+            color: white;
+            padding: 10px;
+            font-size: 14px;
         }
 
         .social-icons {
@@ -150,26 +189,24 @@ img{
 
 <body>
     <header>
-        <div class="navbar">
-            <div class="nav-left">
-                <div class="logo"><img src="img/koluvu.jpeg" alt="Koluvu" width="40"></div>
-                <a class="koluvu">Koluvu</a>
+        <nav class="navbar">
+            <div class=""><img src="img/koluvu.jpeg" alt="Koluvu" width="40"></div>
+            <a href="#" class="logo">Koluvu</a>
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="jobs.html">Jobs</a>
+                <a href="companies.html">Companies</a>
+                <a href="services.html">Services</a>
+                <a href="hrthreads.html">HR Threads</a>
+                <a href="trainingregistration.html">Training Institute</a>
+                <a href="#">Govt Job Notifications</a>
             </div>
-            <div class="nav-center" >
-                <a href="index.html" class="navcentrefont">Home</a>
-                <a href="jobs.html" class="navcentrefont">Jobs</a>
-                <a href="companies.html" class="navcentrefont">Companies</a>
-                <a href="services.html" class="navcentrefont">Services</a>
-                <a href="hrthreadsregister.html" class="navcentrefont">HRThreads</a>
-                <a href="trainingregistration.html" class="navcentrefont">Training Institute</a>
-                <a href="#" class="navcentrefont">Govt Job Notifications</a>
+            <div class="auth-buttons">
+                <a href="employee.html" class="login">Employee</a>
+                <a href="employer.html" class="register">Employer</a>
+                <a href="partnerregister.html" class="partner">Partner</a>
             </div>
-            <div class="nav-right">
-                <a href="register.html" class="navcentrefont">Employee</a>
-                <a href="employerregister.html" class="navcentrefont">Employer</a>
-                <a href="partnerregister.html" class="navcentrefont">Partner</a>
-            </div>
-        </div>
+        </nav>
     </header>
 
     <div class="container">
@@ -179,8 +216,8 @@ img{
             <video src="video/video1.mp4" controls></video><br>
 
             <h3>Training Institute</h3>
-            <video src="video/video2.mp4" controls></video><br>
-            <video src="video/video1.mp4" controls></video><br>
+            <video src="video/video2.mp4" controls></video><br><br><br>
+            <video src="video/video1.mp4" controls></video><br><br><br>
             <video src="path/to/video6.mp4" controls></video>
         </div>
 
@@ -190,7 +227,6 @@ img{
                 <div class="overlay">
                     <h1>"Connecting Jobs, Creating Futures"</h1>
                     <p class="gateway">Your gateway to finding the right job and building a brighter future.</p>
-                    
                 </div>
             </div>
             <br>
@@ -226,6 +262,10 @@ img{
                             <p>Job Type: Contract</p>
                             <p>Salary: $60,000/year</p>
                         </div>
+                        
+                    </div>
+                    <div class="view-bar">
+                        <a href="#"><button >View More Top Fresher Jobs</button></a>
                     </div>
                 </div>
             
@@ -379,8 +419,8 @@ img{
             
             <video src="video/video2.mp4" controls></video><br>
             <h3>Internship Opportunity</h3>
-            <video src="video/video1.mp4" controls></video><br>
-            <video src="path/to/video6.mp4" controls></video><br>
+            <video src="video/video1.mp4" controls></video><br><br><br>
+            <video src="path/to/video6.mp4" controls></video><br><br><br>
             <video src="path/to/video6.mp4" controls></video>
         </div>
     </div>
@@ -470,43 +510,50 @@ img{
 </div>
     <br>
     <footer class="footer">
-        <div class="footer-container">
+        <div>
+            <h3>Company</h3>
+            <a href="#">About Koluvu</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Vulnerability Disclosure Policy</a>
+            <a href="#">FAQs</a>
+        </div>
+        
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#">Download App</a>
+            <a href="#">Free Job Alerts</a>
+            <a href="#">Career Opportunities</a>
             
-            <div class="footer-section">
-                <h3 >About Us</h3>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy & Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#">Resume Building - ATS</a></li>
-                    <li><a href="#">AI - Model Detection</a></li>
-                    <li><a href="#">ATS</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3 >Koluvu Jeevans</h3>
-                <p>Reach!!</p>
-            </div>
-            <div class="footer-section">
-                <h3>Koluvu Videology</h3>
-                <p>Training</p>
-            </div>
-            <div class="footer-section">
-                <h3 >Social Media</h3>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/"><img src="img/fb.jpg" alt="" width="20"></a> <!-- Facebook -->
-                    <a href="https://www.twitter.com/"><img src="img/x.jpg" alt="" width="20"></a> <!-- Twitter -->
-                    <a href="https://www.linkedin.com/"><img src="img/linkedin.jpg" alt="" width="20"></a> <!-- LinkedIn -->
-                    <a href="https://www.instagram.com/"><img src="img/insta.png" alt="" width="20"></a> <!-- Instagram -->
-                </div>
-            </div>
+        </div>
+
+        <div>
+            <h3>Services</h3>
+            <a href="#">Resume Building</a>
+            <a href="#">AI Mock Interviews</a>
+            <a href="#">Applicant Tracking System (ATS)</a>
+        </div>
+
+        <div>
+            <h3>Follow Koluvu</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter (X)</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+            <a href="#">WhatsApp Channel</a>
+        </div>
+        <div>
+            <h3>Contact us</h3>
+            <a href="#">H-no 8-3-230/1/a/b V Giri, Safi Residency,<br>2nd Floor, Yousufguda, Hyderabad,<br>Telangana, India, 500045 </a>
+            <a href="#">support@koluvu.com</a>
+            <a href="#">9866875709</a>
+            
         </div>
     </footer>
+
+    <div class="copyright">
+        © 2025 Koluvu.com | Powered by Bhuvih HR Solutions Pvt. Ltd. | All Rights Reserved
+    </div>
 
     <script src="script.js"></script>
 </body>
