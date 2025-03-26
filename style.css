@@ -136,7 +136,7 @@ body {
 
 .view-bar button {
     padding: 12px 30px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
     color: white;
@@ -157,9 +157,6 @@ body {
     outline: none; /* Remove default outline */
     border: 2px solid #2575fc; /* Highlight border on focus */
 }
-
-
-
 
 .column {
     background: white;
