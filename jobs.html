@@ -106,179 +106,124 @@
     gap: 5px;
 }
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fa7f04; 
+            padding: 15px 30px;
     position: fixed;
     top: 0;
     left: 0;
     width: 99%;
-    background-color: #fff; /* Adjust to match your design */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 10px 20px;
-    font-size: 19px;
-    z-index: 1000; /* Ensures it stays above other elements */
+    font-size: 10px;
+    z-index: 1000;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.nav-left, .nav-center, .nav-right {
-    display: flex;
-    align-items: center;
-    
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.nav-left {
-    justify-content: flex-start;
-    width: 15%;
-    margin-right: 20px;
-    background-color: #eb9142;
-    font-size: 30px;
-}
-
-.nav-center {
-    justify-content: center;
-    width: 80%;
-    margin-right: 30px;
-    background-color: rgb(204, 204, 229);
-}
-
-.nav-right {
-    justify-content: flex-end;
-    width: 20%;
-    margin-right: 20px;
-    background-color: rgb(170, 234, 170);
-    
-}
-
-.nav-center a, .nav-left a, .nav-right a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
-.dropdown {
-            position: relative;
         }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 200px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            z-index: 1;
-            top: 100%;
-            left: 0;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-            font-size: small;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
             text-decoration: none;
-            display: block;
+            margin-right: 200px;
         }
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
+        .menu {
+            display: flex;
+            gap: 20px;
+            margin-right: 100px;
+           
+        }
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .auth-buttons a {
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .login {
+            background-color: green;
+            color: white;
+        }
+        .register {
+            background-color: green;
+            color: white;
+        }
+        .partner {
+            background-color: green; 
+            color: white;
+            margin-right: 50px;
         }
 
         .footer {
-            background-color: #343a40;
+            background-color: green; /* Dark Green */
             color: white;
-            padding: 20px 100px;
-            text-align: center;
-            margin-right: 100px;
-            margin-left: 100px;
-        }
-
-        .footer-container {
+            padding: 20px;
             display: flex;
+            justify-content: space-between;
             flex-wrap: wrap;
-            justify-content: space-around;
-            max-width: 1200px;
-            margin: auto;
+            text-align: left;
         }
-
-        .footer-section {
-            flex: 1;
-            min-width: 200px;
+        .footer div {
             margin: 10px;
         }
-
-        .footer-section h3 {
-            border-bottom: 2px solid white;
+        .footer h3 {
+            border-bottom: 2px solid orange;
             padding-bottom: 5px;
         }
-
-        .footer-section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-section ul li {
-            margin: 8px 0;
-        }
-
-        .footer-section ul li a {
+        .footer a {
             color: white;
             text-decoration: none;
+            display: block;
+            margin: 5px 0;
         }
-
-        .footer-section ul li a:hover {
-            text-decoration: underline;
+        .footer a:hover {
+            color: orange;
         }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
         .social-icons a {
-            color: white;
-            font-size: 24px;
-            text-decoration: none;
+            margin-right: 10px;
         }
+        .copyright {
+            text-align: center;
+            background-color: orange; /* Darker Green */
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        
 
     </style>
 </head>
 <body>
     <header>
-        <div class="navbar">
-            <div class="nav-left">
-                <div class="logo"><img src="img/koluvu.jpeg" alt="Koluvu" width="40"></div>
-                <a class="koluvu">Koluvu</a>
+        <nav class="navbar">
+            <div class=""><img src="img/koluvu.jpeg" alt="Koluvu" width="40"></div>
+            <a href="#" class="logo">Koluvu</a>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="jobs.html">Jobs</a>
+                <a href="companies.html">Companies</a>
+                <a href="services.html">Services</a>
+                <a href="hrthreads.html">HR Threads</a>
+                <a href="trainingregistration.html">Training Institute</a>
+                <a href="#">Govt Job Notifications</a>
             </div>
-            <div class="nav-center" >
-                <a href="index.html" class="navcentrefont">Home</a>
-                
-                <div class="dropdown">
-                    <a href="jobs.html" class="navcentrefont">Jobs</a>
-                </div>
-                <a href="companies.html" class="navcentrefont">Companies</a>
-                <div class="dropdown">
-                    <a href="#" class="navcentrefont">Services</a>
-                    <div class="dropdown-content">
-                        <a href="resumebuilding.html">Resume Building</a>
-                        <a href="#">AI Mock Interviews</a>
-                        <a href="#">ATS</a>
-                    </div>
-                </div>
-                <a href="hrthreadsregister.html" class="navcentrefont">HRThreads</a>
-                <a href="trainingregistration.html" class="navcentrefont">Training Institute</a>
-                <a href="#" class="navcentrefont">Govt Job Notifications</a>
+            <div class="auth-buttons">
+                <a href="employee.html" class="login">Employee</a>
+                <a href="employer.html" class="register">Employer</a>
+                <a href="partnerregister.html" class="partner">Partner</a>
             </div>
-            <div class="nav-right">
-                <a href="register.html" class="navcentrefont">Employee</a>
-                <a href="employerregister.html" class="navcentrefont">Employer</a>
-                <a href="partnerregister.html" class="navcentrefont">Partner</a>
-            </div>
-        </div>
+        </nav>
     </header>
     <br><br><br><br>
     <div class="container">
@@ -336,43 +281,50 @@
         </div>
     </div>
     <footer class="footer">
-        <div class="footer-container">
-            
-            <div class="footer-section">
-                <h3 >About Us</h3>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy & Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#">Resume Building - ATS</a></li>
-                    <li><a href="#">AI - Model Detection</a></li>
-                    <li><a href="#">ATS</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3 >Koluvu Jeevans</h3>
-                <p>Reach!!</p>
-            </div>
-            <div class="footer-section">
-                <h3>Koluvu Videology</h3>
-                <p>Training</p>
-            </div>
-            <div class="footer-section">
-                <h3 >Social Media</h3>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/"><img src="img/fb.jpg" alt="" width="20"></a> <!-- Facebook -->
-                    <a href="https://www.twitter.com/"><img src="img/x.jpg" alt="" width="20"></a> <!-- Twitter -->
-                    <a href="https://www.linkedin.com/"><img src="img/linkedin.jpg" alt="" width="20"></a> <!-- LinkedIn -->
-                    <a href="https://www.instagram.com/"><img src="img/insta.png" alt="" width="20"></a> <!-- Instagram -->
-                </div>
-            </div>
+        <div>
+            <h3>Company</h3>
+            <a href="#">About Koluvu</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Vulnerability Disclosure Policy</a>
+            <a href="#">FAQs</a>
+        </div>
+       
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#">Download App</a>
+            <a href="#">Free Job Alerts</a>
+            <a href="#">Career Opportunities</a>
+           
+        </div>
+ 
+        <div>
+            <h3>Services</h3>
+            <a href="#">Resume Building</a>
+            <a href="#">AI Mock Interviews</a>
+            <a href="#">Applicant Tracking System (ATS)</a>
+        </div>
+ 
+        <div>
+            <h3>Follow Koluvu</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter (X)</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+            <a href="#">WhatsApp Channel</a>
+        </div>
+        <div>
+            <h3>Contact us</h3>
+            <a href="#">H-no 8-3-230/1/a/b V Giri, Safi Residency,<br>2nd Floor, Yousufguda, Hyderabad,<br>Telangana, India, 500045 </a>
+            <a href="#">support@koluvu.com</a>
+            <a href="#">9866875709</a>
+           
         </div>
     </footer>
+ 
+    <div class="copyright">
+        © 2025 Koluvu.com | Powered by Bhuvih HR Solutions Pvt. Ltd. | All Rights Reserved
+    </div>
     <script>
         document.getElementById('search').addEventListener('input', function () {
     let filter = this.value.toLowerCase();
