@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Employer Registration - Koluvu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="/frontend/img/koluvu.jpeg" alt="Koluvu" class="logo-img">
+                <a href="#" class="logo">Koluvu</a>
+            </div>
+            
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <div class="menu-container">
+                <div class="menu">
+                    <a href="/frontend/index.html">Home</a>
+                    <a href="/frontend/jobs.html">Jobs</a>
+                    <a href="companies.html">Companies</a>
+                    <a href="services.html">Services</a>
+                    <a href="hrthreads.html">HR Threads</a>
+                    <a href="trainingregistration.html">Training Institute</a>
+                    <a href="#">Govt Job Notifications</a>
+                </div>
+                <div class="auth-buttons">
+                    <a href="employee.html" class="login">Employee</a>
+                    <a href="employer.html" class="register">Employer</a>
+                    <a href="partnerregister.html" class="partner">Partner</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="main-content">
+        <div class="registration-container">
+            <div class="form-section">
+                <div class="container">
+                    <h1 class="form-title">Employer Registration</h1>
+                    <form id="registrationForm" action="#" method="post" novalidate>
+                        <div class="form-group">
+                            <label for="company">Company Name:</label>
+                            <input type="text" id="company" name="company" placeholder="Enter company name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company-person">Contact Person Name:</label>
+                            <input type="text" id="company-person" name="company-person" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="your@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 9876543210" pattern="[0-9]{10}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" placeholder="Create password (min 8 chars)" minlength="8" required>
+                            <div class="password-hint">Must contain uppercase and number</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm_password">Confirm Password:</label>
+                            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="certificate">Upload Registration Certificate:</label>
+                            <input type="file" id="certificate" name="certificate" accept=".pdf,.doc,.docx" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="captcha">Solve the CAPTCHA: <span id="captchaText" class="captcha-text"></span></label>
+                            <input type="text" id="captcha" name="captcha" placeholder="Enter the answer" required>
+                        </div>
+                        <p class="login-link">Already have an account? <a href="employerlogin.html">Login here</a></p>
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Register Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="video-section">
+                <div class="video-container">
+                    <video src="video/video1.mp4" controls controlsList="nodownload" poster="img/video-poster.jpg" playsinline>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="#">About Koluvu</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Vulnerability Disclosure Policy</a>
+                <a href="#">FAQs</a>
+            </div>
+           
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">Download App</a>
+                <a href="#">Free Job Alerts</a>
+                <a href="#">Career Opportunities</a>
+            </div>
+        
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#">Resume Building</a>
+                <a href="#">AI Mock Interviews</a>
+                <a href="#">Applicant Tracking System (ATS)</a>
+            </div>
+        
+            <div class="footer-section">
+                <h3>Follow Koluvu</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter (X)</a>
+                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp Channel</a>
+                </div>
+            </div>
+        
+            <div class="footer-section">
+                <h3>Contact us</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> H-no 8-3-230/1/a/b V Giri, Safi Residency,<br>2nd Floor, Yousufguda, Hyderabad,<br>Telangana, India, 500045</p>
+                    <a href="mailto:support@koluvu.com"><i class="fas fa-envelope"></i> support@koluvu.com</a>
+                    <p><i class="fas fa-phone"></i> 9866875709</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="copyright">
+        © 2025 Koluvu.com | Powered by Bhuvih HR Solutions Pvt. Ltd. | All Rights Reserved
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
