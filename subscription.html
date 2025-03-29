@@ -6,51 +6,75 @@
     <title>Employee Subscription Plans</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f4f6;
-            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            padding: 40px;
+            text-align: center;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
         }
         .card {
             background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
         }
         .selected {
-            border: 2px solid blue;
+            border: 3px solid #007bff;
         }
         .button {
-            background-color: blue;
+            background-color: #007bff;
             color: white;
-            padding: 10px;
+            padding: 12px;
             border: none;
             cursor: pointer;
             margin-top: 10px;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
         }
         .features {
             list-style: none;
             padding: 0;
+            text-align: left;
         }
         .features li {
-            margin: 5px 0;
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        .features li::before {
+            content: "✔";
+            color: green;
+            margin-right: 8px;
         }
         .active-plan {
-            background: #cce5ff;
-            padding: 10px;
+            background: #e3f2fd;
+            padding: 15px;
             margin-top: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+        .grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Employee Subscription Plans</h1>
-        <div id="plansContainer"></div>
+        <h1 style="color: #343a40; font-size: 28px; margin-bottom: 20px;">Employee Subscription Plans</h1>
+        <div class="grid" id="plansContainer"></div>
         <div id="activePlan" class="active-plan" style="display: none;"></div>
     </div>
     <script>
@@ -70,9 +94,9 @@
                 const card = document.createElement('div');
                 card.className = `card ${selectedPlan == plan.id ? 'selected' : ''}`;
                 card.innerHTML = `
-                    <h2>${plan.name}</h2>
+                    <h2 style="color: #007bff;">${plan.name}</h2>
                     <p><strong>${plan.price}</strong></p>
-                    <ul class="features">${plan.features.map(f => `<li>✔ ${f}</li>`).join('')}</ul>
+                    <ul class="features">${plan.features.map(f => `<li>${f}</li>`).join('')}</ul>
                     <button class="button" onclick="subscribe(${plan.id})">${selectedPlan == plan.id ? 'Subscribed' : 'Subscribe Now'}</button>
                 `;
                 plansContainer.appendChild(card);
