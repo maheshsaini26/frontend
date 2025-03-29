@@ -3,79 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koluvu Slideshow</title>
+    <title>Koluvu Job Portal</title>
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            transition: background-image 1s ease-in-out;
-        }
-        .slideshow-container {
-            text-align: center;
+            background-color: #f3f4f6;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .box {
+            background: white;
+            padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .green { color: #16a34a; }
+        .orange { color: #ea580c; }
+        .btn {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .btn-green { background: #16a34a; }
+        .btn-orange { background: #ea580c; }
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="slideshow-container" id="taglineContainer"></div>
-    
+    <div class="container">
+        <div class="box">
+            <h2 class="title green">Land Your Dream Job</h2>
+            <ul>
+                <li>🌟 Smart Resume Builder and AI Mock Interviews</li>
+                <li>🔍 Personalized Job Matches</li>
+                <li>🚀 Real-Time Notifications</li>
+                <li>💼 Start Your Career Journey with Koluvu Today!</li>
+            </ul>
+            <button class="btn btn-green" onclick="findJobs()">Find Jobs</button>
+        </div>
+        <div class="box">
+            <h2 class="title orange">Get Top Talent Within 24 Hours</h2>
+            <ul>
+                <li>✅ Post Jobs Effortlessly</li>
+                <li>🤖 Koluvu Suggests Potential Candidates</li>
+                <li>📝 Resume Reviews - No Worries!</li>
+                <li>🚀 Smart Hiring Decisions Made Easy</li>
+            </ul>
+            <button class="btn btn-orange" onclick="postJob()">Post a Job</button>
+        </div>
+    </div>
     <script>
-        const taglines = [
-            "Connecting Jobs, Creating Futures",
-            "Empowering Careers, Enabling Dreams",
-            "Your Gateway to a Brighter Future",
-            "Unlocking Opportunities, Building Success",
-            "Find Your Next Move, Secure Your Future",
-            "Jobs That Shape Your Tomorrow",
-            "Bridging Talent with Opportunity",
-            "Where Ambitions Meet Opportunities",
-            "Turning Job Searches into Success Stories",
-            "Discover, Apply, Succeed",
-            "Your Career, Our Commitment"
-        ];
-        
-        const videoImages = [
-            "./images/interview.jpg",
-            "./images/training.jpg",
-            "./images/future.jpg",
-            "./images/opportunity.jpg",
-            "./images/secure_future.jpg",
-            "./images/tomorrow.jpg",
-            "./images/recruitment.jpg",
-            "./images/ambitions.jpg",
-            "./images/success.jpg",
-            "./images/discover.jpg",
-            "./images/commitment.jpg"
-        ];
-        
-        const colors = [
-            "#1E40AF", "#047857", "#DC2626", "#7C3AED", "#EA580C", 
-            "#EAB308", "#0D9488", "#DB2777", "#4338CA", "#4B5563", "#06B6D4"
-        ];
-        
-        let index = 0;
-        const taglineContainer = document.getElementById("taglineContainer");
-        
-        function updateSlideshow() {
-            document.body.style.backgroundImage = `url(${videoImages[index]})`;
-            document.body.style.backgroundColor = colors[index];
-            taglineContainer.textContent = taglines[index];
-            index = (index + 1) % taglines.length;
+        function findJobs() {
+            alert("Redirecting to job listings...");
         }
-        
-        updateSlideshow();
-        setInterval(updateSlideshow, 3000);
+        function postJob() {
+            alert("Redirecting to job posting page...");
+        }
     </script>
 </body>
 </html>
