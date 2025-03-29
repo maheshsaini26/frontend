@@ -3,94 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tagline Slideshow</title>
+    <title>Koluvu Slideshow</title>
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f9f9f9;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
         }
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 20px;
-            width: 80%;
-        }
-        .buttons div {
-            padding: 20px;
+        .slideshow-container {
             text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
             color: white;
-            font-size: 18px;
+            font-size: 2rem;
             font-weight: bold;
-            border-radius: 8px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            cursor: pointer;
-        }
-        .resume { background: #28a745; }
-        .interview { background: #007bff; }
-        .ats { background: #fd7e14; }
-        .carousel {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="buttons">
-            <div class="resume">Resume Building</div>
-            <div class="interview">AI Mock Interviews</div>
-            <div class="ats">ATS</div>
-        </div>
-        <div>
-            <div class="carousel" id="resume-carousel">Build Your Dream Resume with AI Precision!</div>
-            <br>
-            <div class="carousel" id="interview-carousel">Practice Today, Ace Tomorrow with AI Mock Interviews!</div>
-            <br>
-            <div class="carousel" id="ats-carousel">Streamline Your Hiring with Smart ATS Solutions!</div>
-        </div>
-    </div>
-
+    <div class="slideshow-container" id="taglineContainer"></div>
+    
     <script>
-        function startCarousel(elementId, taglines, interval) {
-            let index = 0;
-            setInterval(() => {
-                document.getElementById(elementId).innerText = taglines[index];
-                index = (index + 1) % taglines.length;
-            }, interval);
+        const taglines = [
+            "Connecting Jobs, Creating Futures",
+            "Empowering Careers, Enabling Dreams",
+            "Your Gateway to a Brighter Future",
+            "Unlocking Opportunities, Building Success",
+            "Find Your Next Move, Secure Your Future",
+            "Jobs That Shape Your Tomorrow",
+            "Bridging Talent with Opportunity",
+            "Where Ambitions Meet Opportunities",
+            "Turning Job Searches into Success Stories",
+            "Discover, Apply, Succeed",
+            "Your Career, Our Commitment"
+        ];
+        
+        const videoImages = [
+            "./images/interview.jpg",
+            "./images/training.jpg",
+            "./images/future.jpg",
+            "./images/opportunity.jpg",
+            "./images/secure_future.jpg",
+            "./images/tomorrow.jpg",
+            "./images/recruitment.jpg",
+            "./images/ambitions.jpg",
+            "./images/success.jpg",
+            "./images/discover.jpg",
+            "./images/commitment.jpg"
+        ];
+        
+        let index = 0;
+        const taglineContainer = document.getElementById("taglineContainer");
+        
+        function updateSlideshow() {
+            document.body.style.backgroundImage = `url(${videoImages[index]})`;
+            taglineContainer.textContent = taglines[index];
+            index = (index + 1) % taglines.length;
         }
-
-        startCarousel("resume-carousel", [
-            "Build Your Dream Resume with AI Precision!",
-            "Craft Smarter, Stand Taller with AI-Powered Resumes!",
-            "Your Next Job Starts with a Perfect Resume!",
-            "Tailored Resumes for Every Opportunity!",
-            "AI-Driven Resumes That Get You Noticed!"
-        ], 3000);
-
-        startCarousel("interview-carousel", [
-            "Practice Today, Ace Tomorrow with AI Mock Interviews!",
-            "Simulate Success with Realistic AI Mock Interviews!",
-            "Master Every Question with AI-Powered Prep!",
-            "Confidence Starts Here: AI Mock Interviews for Success!",
-            "Be Interview-Ready with Personalized AI Feedback!"
-        ], 3000);
-
-        startCarousel("ats-carousel", [
-            "Streamline Your Hiring with Smart ATS Solutions!",
-            "Finding Top Talent Made Effortless!",
-            "Intelligent Hiring with ATS Precision!",
-            "Stay Ahead in Recruitment with AI-Powered ATS!",
-            "Automate, Track, Hire: The Ultimate ATS Experience!"
-        ], 3000);
+        
+        updateSlideshow();
+        setInterval(updateSlideshow, 3000);
     </script>
 </body>
 </html>
