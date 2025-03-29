@@ -3,88 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koluvu Header Services</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <title>Tagline Slideshow</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-}
-
-header, footer {
-    background: #f8f9fa;
-    padding: 15px;
-}
-
-.service-box {
-    text-align: center;
-    padding: 10px;
-    background: #e3f2fd;
-    margin: 10px;
-    border-radius: 8px;
-}
-
-.dummy-video {
-    width: 100%;
-    height: auto;
-    background: #ddd;
-    border-radius: 8px;
-}
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            width: 80%;
+        }
+        .buttons div {
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+        .resume { background: #28a745; }
+        .interview { background: #007bff; }
+        .ats { background: #fd7e14; }
+        .carousel {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-
-    <header class="text-center py-3">
-        <h1>Koluvu Header Services</h1>
-    </header>
-
-    <section class="container my-4">
-        <div class="row" >
-            <div class="col-md-4 service-box">
-                <a href="https://koluvuairesume.netlify.app/"><h3>AI Resume Building</h3></a>
-            </div>
-            <div class="col-md-4 service-box">
-                <a href=""><h3 >AI Mock Interview</h3></a>
-            </div>
-            <div class="col-md-3 service-box">
-                <a href=""><h3>ATS</h3></a>
-            </div>
+    <div class="container">
+        <div class="buttons">
+            <div class="resume">Resume Building</div>
+            <div class="interview">AI Mock Interviews</div>
+            <div class="ats">ATS</div>
         </div>
-
-        <div class="row my-4">
-            <div class="col-md-4">
-                <video class="dummy-video" controls>
-                    <source src="dummy.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="col-md-4">
-                <video class="dummy-video" controls>
-                    <source src="dummy.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="col-md-4">
-                <video class="dummy-video" controls>
-                    <source src="dummy.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+        <div>
+            <div class="carousel" id="resume-carousel">Build Your Dream Resume with AI Precision!</div>
+            <br>
+            <div class="carousel" id="interview-carousel">Practice Today, Ace Tomorrow with AI Mock Interviews!</div>
+            <br>
+            <div class="carousel" id="ats-carousel">Streamline Your Hiring with Smart ATS Solutions!</div>
         </div>
+    </div>
 
-        <div class="row my-4">
-            <div class="col-md-6">
-                <h3>Koluvu Jeetam Home</h3>
-            </div>
-            <div class="col-md-6">
-                <h3>Koluvu Kendras Training Module</h3>
-            </div>
-        </div>
-    </section>
+    <script>
+        function startCarousel(elementId, taglines, interval) {
+            let index = 0;
+            setInterval(() => {
+                document.getElementById(elementId).innerText = taglines[index];
+                index = (index + 1) % taglines.length;
+            }, interval);
+        }
 
-    <footer class="text-center py-3">
-        <p>Koluvu Footer</p>
-    </footer>
+        startCarousel("resume-carousel", [
+            "Build Your Dream Resume with AI Precision!",
+            "Craft Smarter, Stand Taller with AI-Powered Resumes!",
+            "Your Next Job Starts with a Perfect Resume!",
+            "Tailored Resumes for Every Opportunity!",
+            "AI-Driven Resumes That Get You Noticed!"
+        ], 3000);
 
+        startCarousel("interview-carousel", [
+            "Practice Today, Ace Tomorrow with AI Mock Interviews!",
+            "Simulate Success with Realistic AI Mock Interviews!",
+            "Master Every Question with AI-Powered Prep!",
+            "Confidence Starts Here: AI Mock Interviews for Success!",
+            "Be Interview-Ready with Personalized AI Feedback!"
+        ], 3000);
+
+        startCarousel("ats-carousel", [
+            "Streamline Your Hiring with Smart ATS Solutions!",
+            "Finding Top Talent Made Effortless!",
+            "Intelligent Hiring with ATS Precision!",
+            "Stay Ahead in Recruitment with AI-Powered ATS!",
+            "Automate, Track, Hire: The Ultimate ATS Experience!"
+        ], 3000);
+    </script>
 </body>
 </html>
