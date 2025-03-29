@@ -1,0 +1,300 @@
+/* Responsive Styles */
+
+/* Custom breakpoint for partner button */
+@media only screen and (max-width: 1100px) {
+    .navbar .d-flex.flex-column.flex-lg-row.align-items-center {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
+    .navbar .btn {
+        margin: 0.25rem;
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* Enhanced Navbar Responsiveness */
+@media (max-width: 992px) {
+    .navbar .nav-right {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    
+    .navbar .nav-right .btn {
+        margin: 0.25rem;
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .mobile-brand {
+        display: inline-block !important;
+    }
+    
+    .navbar-nav {
+        margin-top: 10px;
+    }
+    
+    .navbar-nav .btn {
+        margin: 5px 0;
+    }
+    
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .footer .col-md-4 {
+        margin-bottom: 20px;
+    }
+    
+    /* Adjust glass effect for tablets */
+    .glass-effect {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+/* Enhanced Mobile Navbar Styling */
+@media only screen and (max-width: 768px) {
+    :root {
+        --navbar-height: 60px;
+    }
+
+    .navbar {
+        padding: 0.5rem 1rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: var(--navbar-height);
+    }
+
+    .navbar-brand img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .mobile-brand {
+        font-size: 1rem;
+    }
+    
+    .navbar-collapse {
+        position: fixed;
+        top: var(--navbar-height);
+        left: 0;
+        right: 0;
+        background-color: #f17a02;
+        padding: 1rem;
+        z-index: 1050;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        max-height: calc(100vh - var(--navbar-height));
+        overflow-y: auto;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        margin-top: 0.5rem;
+    }
+
+    .nav-item {
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0;
+    }
+
+    .nav-right {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .nav-right .btn {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+
+    /* Show navbar collapse when toggled */
+    .navbar-collapse.collapse:not(.show) {
+        display: none;
+    }
+
+    .navbar-collapse.collapsing,
+    .navbar-collapse.collapse.show {
+        display: block;
+    }
+
+    /* Make sure navbar doesn't interfere with sidebar */
+    .navbar {
+        z-index: 1060;
+    }
+    
+    /* Show company name on mobile */
+    .mobile-brand {
+        display: inline-block !important;
+        font-size: 1rem;
+    }
+    
+    /* Add space between navbar and content */
+    .main-container {
+        padding-top: var(--navbar-height);
+    }
+    
+    .table-responsive {
+        font-size: 12px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .dashboard-cards .col-6 {
+        margin-bottom: 15px;
+    }
+    
+    .footer .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .ai-candidates .list-group-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .ai-candidates .btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+/* Fix for sidebar on mobile */
+@media (max-width: 767.98px) {
+    .sidebar {
+        position: fixed;
+        top: var(--navbar-height);
+        left: -280px;
+        width: 280px;
+        height: calc(100vh - var(--navbar-height));
+        transition: all 0.3s ease;
+        z-index: 1050;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding-top: var(--navbar-height);
+    }
+
+    .overlay {
+        display: block;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    .overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+/* Extra small devices (phones, 480px and below) */
+@media only screen and (max-width: 480px) {
+    :root {
+        --sidebar-width: 85%;
+    }
+    
+    .navbar-brand img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .mobile-brand {
+        font-size: 0.9rem;
+    }
+
+    .navbar-toggler {
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .main-content {
+        padding: 15px;
+    }
+    
+    .dashboard-cards .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 5px;
+    }
+    
+    .table-responsive {
+        overflow-x: scroll;
+    }
+    
+    .job-listings th, .job-listings td {
+        font-size: 13px;
+        padding: 6px;
+    }
+    
+    .footer .col {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .footer .social-media {
+        justify-content: center;
+    }
+    
+    .btn-group .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    /* Adjust hover effects for small screens */
+    .hover-scale:hover, 
+    .hover-grow:hover, 
+    .hover-rotate:hover {
+        transform: none;
+    }
+    
+    /* Enhanced mobile header */
+    .navbar-brand {
+        padding: 0.25rem 0;
+    }
+    
+    /* Better spacing for mobile */
+    .main-container {
+        padding-top: var(--navbar-height);
+    }
+    
+    /* Mobile viewport height fix */
+    .sidebar {
+        width: var(--sidebar-width);
+    }
+    
+    /* Better mobile sidebar */
+    .sidebar .list-group-item {
+        padding: 0.75rem 1rem;
+    }
+    
+    /* Adjust FAB position for mobile */
+    .fab {
+        bottom: 30px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+}

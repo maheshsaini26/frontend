@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer Dashboard</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay"></div>
+    
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm header-indian-orange">
+            <div class="container-fluid">
+                <!-- Nav Left - Brand Logo and Name -->
+                <div class="nav-left d-flex align-items-center">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/koluvu.jpeg" alt="Koluvu" width="40" height="40" class="d-inline-block align-text-top me-2 navbar-logo">
+                        <span class="fw-bold text-white mobile-brand">Koluvu</span>
+                    </a>
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+    
+                <!-- Nav Center and Right Content -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <!-- Nav Center - Main Links -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/frontend/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/frontend/jobs.html">Jobs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/frontend/companies.html">Companies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/frontend/services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/frontend/hrthreadsregister.html">HRThreads</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/frontend/trainingregistration.html">Training Institute</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/frontend/govtjobsnotification.html">Govt Job Notifications</a>
+                        </li>
+                    </ul>
+    
+                    <!-- Nav Right - Buttons and Theme Toggle -->
+                    <div class="d-flex align-items-center">
+                        <button id="themeToggle" class="btn btn-sm btn-outline-light me-2 rounded-circle hover-scale" title="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <div class="btn-group btn-group-sm">
+                            <a href="/frontend/register.html" class="btn btn-success hover-scale">Employee</a>
+                            <a href="/frontend/employerregister.html" class="btn btn-success hover-scale">Employer</a>
+                            <a href="/frontend/partnerregister.html" class="btn btn-success hover-scale">Partner</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Navbar spacer to prevent content overlap -->
+    <div class="navbar-spacer"></div>
+
+    <div class="container-fluid main-container">
+        <div class="row flex-nowrap">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" id="sidebarMenu">
+                <div class="position-sticky pt-3">
+                    <div class="text-center mb-4">
+                        <img src="img/koluvu.jpeg" alt="" class="img-fluid rounded-circle mb-3 shadow" style="width: 100px; height: 100px; object-fit: cover;">
+                        <h1 class="h4 text-primary">Koluvu</h1>
+                    </div>
+                    <div class="list-group list-group-flush rounded">
+                        <a href="#" class="list-group-item list-group-item-action hover-scale">
+                            <i class="fas fa-plus-circle me-2"></i>Post Job
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action hover-scale">
+                            <i class="fas fa-bolt me-2"></i>Active Jobs
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action hover-scale">
+                            <i class="fas fa-clock me-2"></i>Expired Jobs
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action hover-scale">
+                            <i class="fas fa-lock me-2"></i>Closed Jobs
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action hover-scale">
+                            <i class="fas fa-search me-2"></i>Boolean Search
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action hover-scale">
+                            <i class="fas fa-file-alt me-2"></i>ATS
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action hover-scale">
+                            <i class="fas fa-robot me-2"></i>AI Candidates
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action hover-scale">
+                            <i class="fas fa-calendar-alt me-2"></i>Interview Scheduler
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action hover-scale">
+                            <i class="fas fa-star me-2"></i>Subscription
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-sm btn-outline-secondary d-md-none me-3" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-expanded="false" aria-controls="sidebarMenu">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <h1 class="h2 text-gradient">Welcome to Bhuvih HR Solutions Pvt Ltd</h1>
+                    </div>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button class="btn btn-sm btn-light rounded-circle me-2 hover-scale" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Notifications">
+                                <i class="fas fa-bell text-primary"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    3
+                                </span>
+                            </button>
+                            <button class="btn btn-sm btn-light rounded-circle hover-scale" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Messages">
+                                <i class="fas fa-comment text-success"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    5
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Analytics -->
+                <div class="row g-4 mb-4 dashboard-cards" data-aos="fade-up">
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="card text-center bg-primary text-white hover-scale card-3d">
+                            <div class="card-body">
+                                <i class="fas fa-plus-circle fa-2x mb-3"></i>
+                                <h5 class="card-title">Post Jobs</h5>
+                                <p class="card-text display-6">12</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="card text-center bg-success text-white hover-scale card-3d">
+                            <div class="card-body">
+                                <i class="fas fa-bolt fa-2x mb-3"></i>
+                                <h5 class="card-title">Active Jobs</h5>
+                                <p class="card-text display-6">12</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="card text-center bg-info text-white hover-scale card-3d">
+                            <div class="card-body">
+                                <i class="fas fa-file-alt fa-2x mb-3"></i>
+                                <h5 class="card-title">Total Applications</h5>
+                                <p class="card-text display-6">45</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="card text-center bg-warning text-white hover-scale card-3d">
+                            <div class="card-body">
+                                <i class="fas fa-filter fa-2x mb-3"></i>
+                                <h5 class="card-title">Shortlisted</h5>
+                                <p class="card-text display-6">8</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="card text-center bg-danger text-white hover-scale card-3d">
+                            <div class="card-body">
+                                <i class="fas fa-calendar-alt fa-2x mb-3"></i>
+                                <h5 class="card-title">Interviews</h5>
+                                <p class="card-text display-6">5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Listings -->
+                <div class="card mb-4 shadow-sm card-3d" data-aos="fade-up">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Job Listings</h5>
+                        <button class="btn btn-sm btn-primary hover-scale pulse-glow">
+                            <i class="fas fa-plus me-1"></i> New Job
+                        </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Job Title</th>
+                                    <th>Status</th>
+                                    <th>Applicants</th>
+                                    <th>Expiry Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="hover-shadow">
+                                    <td>Software Engineer</td>
+                                    <td><span class="badge bg-success rounded-pill">Active</span></td>
+                                    <td>24</td>
+                                    <td>March 20, 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary hover-scale" onclick="viewJob()">
+                                            <i class="fas fa-eye me-1"></i> View
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="hover-shadow">
+                                    <td>Marketing Manager</td>
+                                    <td><span class="badge bg-secondary rounded-pill">Closed</span></td>
+                                    <td>15</td>
+                                    <td>Feb 15, 2025</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-warning hover-scale" onclick="renewJob()">
+                                            <i class="fas fa-sync-alt me-1"></i> Renew
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- AI Candidate Suggestions -->
+                <div class="card shadow-sm card-3d" data-aos="fade-up">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0">AI Suggested Candidates</h5>
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex justify-content-between align-items-center hover-scale">
+                            <div class="d-flex align-items-center">
+                                <img src="https://via.placeholder.com/40" alt="Profile" class="rounded-circle me-3">
+                                <div>
+                                    <h6 class="mb-0">John Doe</h6>
+                                    <small class="text-muted">Software Engineer - 5 years experience</small>
+                                </div>
+                            </div>
+                            <button class="btn btn-sm btn-primary rounded-pill hover-scale pulse-glow" onclick="connectCandidate('John Doe')">
+                                <i class="fas fa-user-plus me-1"></i> Connect
+                            </button>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center hover-scale">
+                            <div class="d-flex align-items-center">
+                                <img src="https://via.placeholder.com/40" alt="Profile" class="rounded-circle me-3">
+                                <div>
+                                    <h6 class="mb-0">Jane Smith</h6>
+                                    <small class="text-muted">UI/UX Designer - 3 years experience</small>
+                                </div>
+                            </div>
+                            <button class="btn btn-sm btn-primary rounded-pill hover-scale pulse-glow" onclick="connectCandidate('Jane Smith')">
+                                <i class="fas fa-user-plus me-1"></i> Connect
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                    <br><br><br>
+                    <h4>Company</h4>
+                    <hr class="footer-divider">
+                    <ul class="list-unstyled small">
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none hover-underline">About Koluvu</a></li>
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none hover-underline">Privacy Policy</a></li>
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none hover-underline">Terms & Conditions</a></li>
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none hover-underline">Vulnerability Disclosure Policy</a></li>
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none hover-underline">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <br><br><br>
+                    <h4>Quick Links</h4>
+                    <hr class="footer-divider">
+                    <ul class="list-unstyled small">
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none hover-underline">Download App</a></li>
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none hover-underline">Free Job Alerts</a></li>
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none hover-underline">Career Opportunities</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <br><br><br>
+                    <h4>Services</h4>
+                    <hr class="footer-divider">
+                    <ul class="list-unstyled small">
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none hover-underline">Resume Building</a></li>
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none hover-underline">AI Mock Interviews</a></li>
+                        <li class="py-1"><a href="#" class="text-white text-decoration-none hover-underline">Applicant Tracking System</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2 mb-3">
+                    <br><br><br>
+                    <h4>Follow Koluvu</h4>
+                    <hr class="footer-divider">
+                    <div class="social-media pt-2">
+                        <a href="#" class="text-white mx-1 hover-scale"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white mx-1 hover-scale"><i class="bi bi-x"></i></a>
+                        <a href="#" class="text-white mx-1 hover-scale"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white mx-1 hover-scale"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white mx-1 hover-scale"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 mb-3">
+                    <br><br><br>
+                    <h4>Contact Us</h4>
+                    <hr class="footer-divider">
+                    <p class="small mb-1"><i class="fas fa-map-marker-alt me-2"></i>H-no 8-3-230/1/a/b V Giri, Safi Residency, 2nd Floor, Yousufguda, Hyderabad, Telangana, India, 500045</p>
+                    <p class="small mb-1"><i class="fas fa-envelope me-2"></i>support@koluvu.com</p>
+                    <p class="small"><i class="fas fa-phone me-2"></i>9866875709</p>
+                </div>
+            </div>
+            <hr class="bg-white">
+            <div class="footer-bottom bg-orange text-white p-3 rounded">
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center text-center">
+                    <p class="mb-2 mb-sm-0">© 2025 Koluvu.com | Powered by Bhuvih HR Solutions Pvt. Ltd. | All Rights Reserved</p>
+                    <div class="footer-links">
+                        <a href="#" class="hover-underline">Terms of use</a>
+                        <a href="#" class="hover-underline">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap 5 JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
