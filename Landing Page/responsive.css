@@ -1,0 +1,258 @@
+/* Responsive Design */
+@media (max-width: 1475px) {
+    .menu-container {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fa7f04;
+        z-index: 1000;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease;
+        padding: 0;
+        margin: 0;
+        align-items: center;
+    }
+    
+    .menu-container.active {
+        max-height: 100vh;
+        padding: 30px 5%;
+    }
+    
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 20px;
+        margin: 20px 0;
+    }
+    
+    .auth-buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .auth-buttons a {
+        width: 200px;
+        text-align: center;
+        padding: 12px 0;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hamburger.active .hamburger-line:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .hamburger-line:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Adjust container layout */
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .left-section, .right-section, .center-section {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .search-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .search-bar input {
+        width: 100%;
+    }
+
+    .jobs-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        justify-items: center;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar {
+        padding: 10px 3%;
+    }
+    
+    body {
+        padding-top: 60px;
+        font-size: 14px;
+    }
+    
+    .menu a {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+    
+    .auth-buttons a {
+        font-size: 1rem;
+    }
+
+    /* FAQ adjustments */
+    .faq-container {
+        padding: 15px;
+    }
+
+    /* Hero text adjustments */
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+    
+    .footer h3 {
+        font-size: 1rem;
+    }
+    
+    .footer a, .footer p {
+        font-size: 0.85rem;
+    }
+    
+    .navbar {
+        padding: 10px 3%;
+    }
+
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Adjust job cards */
+    .job-card {
+        padding: 15px;
+    }
+
+    /* Footer adjustments */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* Search bar adjustments */
+    .search-bar button {
+        width: 100%;
+    }
+
+    /* Center all section headings */
+    .section-heading {
+        text-align: center;
+    }
+
+    /* Center stats in hero */
+    .hero-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+/* Special cases for very small screens */
+@media (max-width: 360px) {
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .menu a {
+        padding: 8px 15px;
+        font-size: 0.95rem;
+    }
+
+    .auth-buttons a {
+        padding: 10px 0;
+        font-size: 0.9rem;
+        width: 180px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Testimonials adjustments */
+    .testimonial-card {
+      min-width: calc(100% - 40px);
+      padding: 20px;
+    }
+  
+    /* Search bar adjustments */
+    .search-bar {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .search-input input, 
+    .search-input select {
+      width: 100%;
+      padding: 12px 15px 12px 40px;
+    }
+  
+    .search-button {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    /* Section spacing adjustments */
+    .features-section {
+      padding: 40px 0;
+    }
+  
+    .job-sections .section {
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Further testimonial adjustments */
+    .testimonial-card {
+      min-width: calc(100% - 30px);
+      padding: 15px;
+    }
+  
+    /* Search input improvements */
+    .search-input input, 
+    .search-input select {
+      font-size: 0.9rem;
+      padding: 10px 15px 10px 35px;
+    }
+  
+    .search-input i {
+      left: 10px;
+    }
+  
+    /* Reduce gaps further */
+    .section {
+      margin-bottom: 20px;
+    }
+  }
