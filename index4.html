@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koluvu Job Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f3f3f3; padding: 20px; }
+        .container { display: flex; gap: 20px; justify-content: center; }
+        .box { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 40%; }
+        h2 { color: #333; }
+        input, button { width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px; }
+        button { background: #28a745; color: white; cursor: pointer; }
+        button:hover { background: #218838; }
+        .orange { background: #ff9800; }
+        .orange:hover { background: #e68900; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 5px 0; border-bottom: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Koluvu Job Portal</h1>
+    <div class="container">
+        
+        <!-- Candidate Section -->
+        <div class="box">
+            <h2>Land Your Dream Job</h2>
+            <input type="text" id="candidateName" placeholder="Candidate Name">
+            <input type="text" id="candidateSkills" placeholder="Skills">
+            <button onclick="addCandidate()">Add Candidate</button>
+            <h3>Candidates:</h3>
+            <ul id="candidateList"></ul>
+        </div>
+
+        <!-- Job Section -->
+        <div class="box">
+            <h2>Get Top Talent Within 24 Hours</h2>
+            <input type="text" id="jobTitle" placeholder="Job Title">
+            <input type="text" id="jobDescription" placeholder="Job Description">
+            <button class="orange" onclick="addJob()">Post a Job</button>
+            <h3>Jobs:</h3>
+            <ul id="jobList"></ul>
+        </div>
+
+    </div>
+
+    <script>
+        const apiUrl = 'http://localhost:5000/api'; // Change based on your backend
+
+        async function fetchData(endpoint, elementId) {
+            try {
+                let response = await fetch(`${apiUrl}/${endpoint}`);
+                let data = await response.json();
+                let list = document.getElementById(elementId);
+                list.innerHTML = '';
+                data.forEach(item => {
+                    let li = document.createElement('li');
+                    li.textContent = endpoint === 'jobs' ? `${item.title} - ${item.description}` : `${item.name} - ${item.skills}`;
+                    list.appendChild(li);
+                });
+            } catch (error) {
+                console.error(`Error fetching ${endpoint}:`, error);
+            }
+        }
+
+        async function addJob() {
+            let title = document.getElementById('jobTitle').value;
+            let description = document.getElementById('jobDescription').value;
+            
+            if (!title || !description) return alert('Please fill all fields');
+
+            let response = await fetch(`${apiUrl}/jobs`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title, description })
+            });
+            if (response.ok) fetchData('jobs', 'jobList');
+        }
+
+        async function addCandidate() {
+            let name = document.getElementById('candidateName').value;
+            let skills = document.getElementById('candidateSkills').value;
+            
+            if (!name || !skills) return alert('Please fill all fields');
+
+            let response = await fetch(`${apiUrl}/candidates`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, skills })
+            });
+            if (response.ok) fetchData('candidates', 'candidateList');
+        }
+
+        fetchData('jobs', 'jobList');
+        fetchData('candidates', 'candidateList');
+    </script>
+</body>
+</html>
