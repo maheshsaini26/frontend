@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Subscription Plans</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .selected {
+            border: 2px solid blue;
+        }
+        .button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .features {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            margin: 5px 0;
+        }
+        .active-plan {
+            background: #cce5ff;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Subscription Plans</h1>
+        <div id="plansContainer"></div>
+        <div id="activePlan" class="active-plan" style="display: none;"></div>
+    </div>
+    <script>
+        const plans = [
+            { id: 1, name: 'Basic Plan', price: '₹499/month', features: ['AI Resume Builder (Limited)', '3 AI Mock Interviews', 'ATS Access (Basic)'] },
+            { id: 2, name: 'Pro Plan', price: '₹999/month', features: ['AI Resume Builder (Unlimited)', '10 AI Mock Interviews', 'ATS Access (Pro)'] },
+            { id: 3, name: 'Premium Plan', price: '₹1499/month', features: ['AI Resume Builder (Advanced)', 'Unlimited AI Mock Interviews', 'ATS Access (Premium)', 'Priority Support'] }
+        ];
+
+        const plansContainer = document.getElementById('plansContainer');
+        const activePlanDiv = document.getElementById('activePlan');
+        let selectedPlan = localStorage.getItem('selectedPlan');
+
+        function renderPlans() {
+            plansContainer.innerHTML = '';
+            plans.forEach(plan => {
+                const card = document.createElement('div');
+                card.className = `card ${selectedPlan == plan.id ? 'selected' : ''}`;
+                card.innerHTML = `
+                    <h2>${plan.name}</h2>
+                    <p><strong>${plan.price}</strong></p>
+                    <ul class="features">${plan.features.map(f => `<li>✔ ${f}</li>`).join('')}</ul>
+                    <button class="button" onclick="subscribe(${plan.id})">${selectedPlan == plan.id ? 'Subscribed' : 'Subscribe Now'}</button>
+                `;
+                plansContainer.appendChild(card);
+            });
+            updateActivePlan();
+        }
+
+        function subscribe(planId) {
+            selectedPlan = planId;
+            localStorage.setItem('selectedPlan', planId);
+            alert(`Successfully subscribed to ${plans.find(p => p.id == planId).name}`);
+            renderPlans();
+        }
+
+        function updateActivePlan() {
+            if (selectedPlan) {
+                const plan = plans.find(p => p.id == selectedPlan);
+                activePlanDiv.innerHTML = `<h3>Subscription Active: ${plan.name}</h3><p>Access Granted:</p><ul>${plan.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
+                activePlanDiv.style.display = 'block';
+            }
+        }
+
+        renderPlans();
+    </script>
+</body>
+</html>
