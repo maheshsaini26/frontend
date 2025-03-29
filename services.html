@@ -59,11 +59,17 @@
             "./images/commitment.jpg"
         ];
         
+        const colors = [
+            "#1E40AF", "#047857", "#DC2626", "#7C3AED", "#EA580C", 
+            "#EAB308", "#0D9488", "#DB2777", "#4338CA", "#4B5563", "#06B6D4"
+        ];
+        
         let index = 0;
         const taglineContainer = document.getElementById("taglineContainer");
         
         function updateSlideshow() {
             document.body.style.backgroundImage = `url(${videoImages[index]})`;
+            document.body.style.backgroundColor = colors[index];
             taglineContainer.textContent = taglines[index];
             index = (index + 1) % taglines.length;
         }
