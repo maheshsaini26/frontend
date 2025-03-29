@@ -5,121 +5,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Subscription Plans</title>
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-            padding: 40px;
-            text-align: center;
-        }
-        .container {
-            max-width: 1000px;
-            margin: auto;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease-in-out;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .selected {
-            border: 3px solid #007bff;
-        }
-        .button {
-            background-color: #007bff;
-            color: white;
-            padding: 12px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: background 0.3s;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-        .features {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-        .features li {
-            margin: 8px 0;
-            display: flex;
-            align-items: center;
-        }
-        .features li::before {
-            content: "✔";
-            color: green;
-            margin-right: 8px;
-        }
-        .active-plan {
-            background: #e3f2fd;
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 8px;
-            font-size: 18px;
-        }
-        .grid {
-            display: grid;
-            gap: 20px;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
+ /* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #eef2f7);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+/* Title */
+.title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Plan Cards */
+.plans {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap; /* Ensures all plans stay in one row */
+    overflow-x: auto; /* Allows scrolling on small screens */
+    padding-bottom: 10px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 280px; /* Ensures consistent width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+    background: linear-gradient(to bottom, #f0f8ff, white);
+    flex: 1; /* Ensures equal spacing */
+    max-width: 300px; /* Prevents cards from stretching too much */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card.selected {
+    border: 3px solid #007bff;
+}
+
+/* Plan Title */
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Price */
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* Features */
+.features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.features li {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.features li::before {
+    content: "✔";
+    color: green;
+    margin-right: 10px;
+}
+
+/* Subscribe Button */
+.subscribe-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    background: #0056b3;
+}
+
+.subscribe-btn.selected {
+    background: #28a745;
+}
+
+/* Active Plan Info */
+.active-plan {
+    background: #e3f2fd;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .plans {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+    }
+
+    .card {
+        min-width: 250px;
+    }
+}
+
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1 style="color: #343a40; font-size: 28px; margin-bottom: 20px;">Employee Subscription Plans</h1>
-        <div class="grid" id="plansContainer"></div>
-        <div id="activePlan" class="active-plan" style="display: none;"></div>
+        <h1 class="title">Employee Subscription Plans</h1>
+        <div class="plans" id="plans-container"></div>
+        <div id="active-plan" class="active-plan hidden"></div>
     </div>
+
     <script>
-        const plans = [
-            { id: 1, name: 'Basic Plan', price: '₹499/month', features: ['AI Resume Builder (Limited)', '3 AI Mock Interviews', 'ATS Access (Basic)'] },
-            { id: 2, name: 'Pro Plan', price: '₹999/month', features: ['AI Resume Builder (Unlimited)', '10 AI Mock Interviews', 'ATS Access (Pro)'] },
-            { id: 3, name: 'Premium Plan', price: '₹1499/month', features: ['AI Resume Builder (Advanced)', 'Unlimited AI Mock Interviews', 'ATS Access (Premium)', 'Priority Support'] }
-        ];
+        document.addEventListener("DOMContentLoaded", function () {
+    const plans = [
+        { id: 1, name: "Basic Plan", price: "₹499/month", features: ["AI Resume Builder (Limited)", "3 AI Mock Interviews", "ATS Access (Basic)"] },
+        { id: 2, name: "Pro Plan", price: "₹999/month", features: ["AI Resume Builder (Unlimited)", "10 AI Mock Interviews", "ATS Access (Pro)"] },
+        { id: 3, name: "Premium Plan", price: "₹1499/month", features: ["AI Resume Builder (Advanced)", "Unlimited AI Mock Interviews", "ATS Access (Premium)", "Priority Support"] }
+    ];
 
-        const plansContainer = document.getElementById('plansContainer');
-        const activePlanDiv = document.getElementById('activePlan');
-        let selectedPlan = localStorage.getItem('selectedPlan');
+    const plansContainer = document.getElementById("plans-container");
+    const activePlanDiv = document.getElementById("active-plan");
+    let selectedPlanId = localStorage.getItem("selectedPlan") ? parseInt(localStorage.getItem("selectedPlan")) : null;
 
-        function renderPlans() {
-            plansContainer.innerHTML = '';
-            plans.forEach(plan => {
-                const card = document.createElement('div');
-                card.className = `card ${selectedPlan == plan.id ? 'selected' : ''}`;
-                card.innerHTML = `
-                    <h2 style="color: #007bff;">${plan.name}</h2>
-                    <p><strong>${plan.price}</strong></p>
-                    <ul class="features">${plan.features.map(f => `<li>${f}</li>`).join('')}</ul>
-                    <button class="button" onclick="subscribe(${plan.id})">${selectedPlan == plan.id ? 'Subscribed' : 'Subscribe Now'}</button>
-                `;
-                plansContainer.appendChild(card);
-            });
-            updateActivePlan();
+    // Function to render plans
+    function renderPlans() {
+        plansContainer.innerHTML = "";
+        plans.forEach(plan => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            if (plan.id === selectedPlanId) card.classList.add("selected");
+
+            card.innerHTML = `
+                <h2>${plan.name}</h2>
+                <p class="price">${plan.price}</p>
+                <ul class="features">
+                    ${plan.features.map(feature => `<li>${feature}</li>`).join("")}
+                </ul>
+                <button class="subscribe-btn ${plan.id === selectedPlanId ? "selected" : ""}" data-id="${plan.id}">
+                    ${plan.id === selectedPlanId ? "Subscribed" : "Subscribe Now"}
+                </button>
+            `;
+
+            plansContainer.appendChild(card);
+        });
+
+        updateActivePlan();
+        attachEventListeners();
+    }
+
+    // Function to update active plan display
+    function updateActivePlan() {
+        if (selectedPlanId) {
+            const selectedPlan = plans.find(plan => plan.id === selectedPlanId);
+            activePlanDiv.innerHTML = `
+                <h3>Subscription Active: ${selectedPlan.name}</h3>
+                <p>Access Granted:</p>
+                <ul class="features">
+                    ${selectedPlan.features.map(feature => `<li>${feature}</li>`).join("")}
+                </ul>
+            `;
+            activePlanDiv.classList.remove("hidden");
+        } else {
+            activePlanDiv.classList.add("hidden");
         }
+    }
 
-        function subscribe(planId) {
-            selectedPlan = planId;
-            localStorage.setItem('selectedPlan', planId);
-            alert(`Successfully subscribed to ${plans.find(p => p.id == planId).name}`);
-            renderPlans();
-        }
-
-        function updateActivePlan() {
-            if (selectedPlan) {
-                const plan = plans.find(p => p.id == selectedPlan);
-                activePlanDiv.innerHTML = `<h3>Subscription Active: ${plan.name}</h3><p>Access Granted:</p><ul>${plan.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
-                activePlanDiv.style.display = 'block';
-            }
-        }
-
+    // Function to handle subscription
+    function handleSubscribe(planId) {
+        selectedPlanId = planId;
+        localStorage.setItem("selectedPlan", planId);
         renderPlans();
+        alert(`Successfully subscribed to ${plans.find(p => p.id === planId).name}`);
+    }
+
+    // Attach event listeners to buttons
+    function attachEventListeners() {
+        document.querySelectorAll(".subscribe-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const planId = parseInt(this.getAttribute("data-id"));
+                handleSubscribe(planId);
+            });
+        });
+    }
+
+    // Initial Render
+    renderPlans();
+});
+
     </script>
 </body>
 </html>
