@@ -69,6 +69,13 @@
     .left-section, .right-section, .center-section {
         width: 100%;
     }
+
+    /* Feature cards adjustment for 1330-1474px */
+    @media (min-width: 1330px) and (max-width: 1474px) {
+        .features-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 }
 
 @media (max-width: 1024px) {
@@ -84,6 +91,11 @@
     .jobs-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         justify-items: center;
+    }
+
+    .features-grid {
+        margin-top: 0;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -118,6 +130,17 @@
     
     .hero-subtitle {
         font-size: 1.1rem;
+    }
+
+    /* Features section adjustments */
+    .feature-card {
+        padding: 20px;
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
     }
 }
 
@@ -170,6 +193,12 @@
         align-items: center;
         gap: 15px;
     }
+
+    /* Features grid adjustments */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
 /* Special cases for very small screens */
@@ -196,8 +225,15 @@
     .hero-subtitle {
         font-size: 1rem;
     }
-}
 
+    .feature-card {
+        padding: 15px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.1rem;
+    }
+}
 
 @media (max-width: 768px) {
     /* Testimonials adjustments */
@@ -231,9 +267,9 @@
     .job-sections .section {
       margin-bottom: 30px;
     }
-  }
+}
   
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
     /* Further testimonial adjustments */
     .testimonial-card {
       min-width: calc(100% - 30px);
@@ -255,4 +291,20 @@
     .section {
       margin-bottom: 20px;
     }
-  }
+
+    /* Newsletter form adjustments */
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+}
+
+/* Specific adjustment for feature cards between 1330px and 1474px */
+@media (min-width: 1330px) and (max-width: 1474px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
