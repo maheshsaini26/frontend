@@ -27,7 +27,7 @@
             align-items: center;
             justify-content: space-between;
             background-color: #fa7f04;
-            padding: 12px 5%;
+            padding: 8px 3%;
             position: fixed;
             top: 0;
             left: 0;
@@ -39,16 +39,16 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .logo-container img {
-            height: 30px;
+            height: 28px;
             width: auto;
         }
 
         .logo {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: bold;
             color: white;
             text-decoration: none;
@@ -59,15 +59,15 @@
             display: none;
             flex-direction: column;
             justify-content: space-between;
-            width: 28px;
-            height: 20px;
+            width: 26px;
+            height: 18px;
             cursor: pointer;
             z-index: 1001;
         }
 
         .hamburger-line {
             display: block;
-            height: 3px;
+            height: 2.5px;
             width: 100%;
             background-color: white;
             border-radius: 3px;
@@ -78,18 +78,18 @@
         .menu-container {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .menu {
             display: flex;
-            gap: 15px;
+            gap: 10px;
         }
 
         .menu a {
             color: white;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             font-weight: 500;
             transition: opacity 0.3s;
         }
@@ -100,15 +100,15 @@
 
         .auth-buttons {
             display: flex;
-            gap: 12px;
+            gap: 8px;
         }
 
         .auth-buttons a {
             color: white;
             text-decoration: none;
-            padding: 6px 12px;
+            padding: 5px 10px;
             border-radius: 4px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             background-color: green;
             transition: background-color 0.3s;
         }
@@ -120,11 +120,11 @@
         /* Main Content */
         .container {
             max-width: 1200px;
-            width: 95%;
-            margin: 70px auto 0; /* Changed margin-top to 0 to remove space */
+            width: 100%;
+            margin: 60px auto 0;
             background: white;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 0;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
             flex: 1;
         }
@@ -192,6 +192,22 @@
 
         .text-blue {
             color: #0066cc;
+        }
+
+        .job-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+
+        .salary {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .experience {
+            color: #d32f2f;
         }
 
         .apply-btn {
@@ -266,15 +282,15 @@
             
             .menu-container {
                 position: fixed;
-                top: 60px;
+                top: 0; /* Changed from 56px to 0 to remove the gap */
                 left: 0;
                 right: 0;
                 background-color: #fa7f04;
                 flex-direction: column;
                 align-items: center;
-                padding: 20px 5%;
-                gap: 20px;
-                transform: translateY(-150%);
+                padding: 70px 5% 15px; /* Added top padding to account for navbar height */
+                gap: 15px;
+                transform: translateY(-100%);
                 transition: transform 0.3s ease;
                 z-index: 999;
             }
@@ -287,24 +303,24 @@
                 flex-direction: column;
                 width: 100%;
                 align-items: center;
-                gap: 15px;
+                gap: 12px;
             }
             
             .auth-buttons {
                 width: 100%;
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
             }
             
             .auth-buttons a {
                 width: 100%;
                 text-align: center;
-                padding: 10px;
+                padding: 8px;
             }
             
             /* Hamburger animation */
             .hamburger.active .hamburger-line:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
+                transform: translateY(7px) rotate(45deg);
             }
             
             .hamburger.active .hamburger-line:nth-child(2) {
@@ -312,15 +328,13 @@
             }
             
             .hamburger.active .hamburger-line:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
+                transform: translateY(-7px) rotate(-45deg);
             }
             
             /* Main content adjustment */
             .container {
-                margin-top: 60px;
+                margin-top: 56px;
                 padding: 15px;
-                width: 100%;
-                border-radius: 0;
             }
             
             .job-listings {
@@ -332,7 +346,7 @@
                 flex-direction: column;
                 gap: 25px;
                 text-align: center;
-                padding: 30px 10%;
+                padding: 25px 10%;
             }
             
             .footer > div {
@@ -346,24 +360,24 @@
 
         @media (max-width: 480px) {
             .navbar {
-                padding: 10px 5%;
+                padding: 6px 3%;
             }
             
             .logo {
-                font-size: 1.1rem;
+                font-size: 0.95rem;
             }
             
             .logo-container img {
-                height: 25px;
+                height: 24px;
             }
             
             .hamburger {
                 width: 24px;
-                height: 18px;
+                height: 16px;
             }
             
             .container {
-                margin-top: 60px; /* Adjusted to match navbar height */
+                margin-top: 52px;
                 padding: 12px;
             }
             
@@ -373,7 +387,7 @@
             }
             
             .footer {
-                padding: 25px 5%;
+                padding: 20px 5%;
             }
         }
     </style>
@@ -479,13 +493,62 @@
         ];
 
         const jobListings = [
-            { title: "Front-End Developer", company: "ABC Tech", location: "Hyderabad", type: "Full-Time" },
-            { title: "Back-End Developer", company: "XYZ Tech", location: "Bangalore", type: "Full-Time" },
-            { title: "Full Stack Developer", company: "DevHub", location: "Mumbai", type: "Remote" },
-            { title: "Software Engineer", company: "Tech Innovators", location: "Delhi", type: "Full-Time" },
-            { title: "DevOps Engineer", company: "Cloud Solutions", location: "Chennai", type: "Full-Time" },
-            { title: "Data Scientist", company: "AI Labs", location: "Pune", type: "Full-Time" },
-            { title: "Cyber Security", company: "SecureNet", location: "Hyderabad", type: "Full-Time" }
+            { 
+                title: "Front-End Developer", 
+                company: "ABC Tech", 
+                location: "Hyderabad", 
+                type: "Full-Time",
+                salary: "₹6-10 LPA",
+                experience: "2-4 years"
+            },
+            { 
+                title: "Back-End Developer", 
+                company: "XYZ Tech", 
+                location: "Bangalore", 
+                type: "Full-Time",
+                salary: "₹8-12 LPA",
+                experience: "3-5 years"
+            },
+            { 
+                title: "Full Stack Developer", 
+                company: "DevHub", 
+                location: "Mumbai", 
+                type: "Remote",
+                salary: "₹10-15 LPA",
+                experience: "4-6 years"
+            },
+            { 
+                title: "Software Engineer", 
+                company: "Tech Innovators", 
+                location: "Delhi", 
+                type: "Full-Time",
+                salary: "₹5-8 LPA",
+                experience: "1-3 years"
+            },
+            { 
+                title: "DevOps Engineer", 
+                company: "Cloud Solutions", 
+                location: "Chennai", 
+                type: "Full-Time",
+                salary: "₹9-14 LPA",
+                experience: "3-6 years"
+            },
+            { 
+                title: "Data Scientist", 
+                company: "AI Labs", 
+                location: "Pune", 
+                type: "Full-Time",
+                salary: "₹12-18 LPA",
+                experience: "5-8 years"
+            },
+            { 
+                title: "Cyber Security", 
+                company: "SecureNet", 
+                location: "Hyderabad", 
+                type: "Full-Time",
+                salary: "₹7-11 LPA",
+                experience: "2-5 years"
+            }
         ];
 
         // Display Functions
@@ -510,6 +573,10 @@
                     <h2>${job.title}</h2>
                     <p>${job.company} - ${job.location}</p>
                     <p class="text-blue">${job.type}</p>
+                    <div class="job-details">
+                        <span class="salary">${job.salary}</span>
+                        <span class="experience">Exp: ${job.experience}</span>
+                    </div>
                     <button class="apply-btn">Apply Now</button>
                 `;
                 jobContainer.appendChild(jobCard);
