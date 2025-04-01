@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mock Interview</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        .hidden { display: none; }
+        button { margin-top: 10px; padding: 10px; cursor: pointer; }
+        textarea { width: 100%; height: 100px; margin-top: 10px; }
+        select, input { width: 100%; padding: 8px; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>AI Mock Interview</h2>
+        <label>Upload Resume:</label>
+        <input type="file" id="resumeUpload">
+        
+        <div id="setup" class="hidden">
+            <label>Select Interview Type:</label>
+            <select id="interviewType">
+                <option value="General">General Mock Interview</option>
+                <option value="Company-Specific">Company-Specific Mock Interview</option>
+            </select>
+        </div>
+
+        <div id="interview" class="hidden">
+            <h3>Suggested Question</h3>
+            <p id="question"></p>
+            <button onclick="prevQuestion()">Previous</button>
+            <button onclick="nextQuestion()">Next</button>
+            <textarea id="response" placeholder="Type your response here..."></textarea>
+            <button onclick="submitResponse()">Submit Response</button>
+        </div>
+
+        <div id="feedback" class="hidden">
+            <h3>AI Feedback & Suggested Answers</h3>
+            <p id="feedbackText"></p>
+            <h4>Suggested Answers:</h4>
+            <p id="suggestedAnswers"></p>
+        </div>
+    </div>
+
+    <script>
+        let questions = ["Tell me about yourself.", "Why do you want this job?", "What are your strengths and weaknesses?"];
+        let currentQuestionIndex = 0;
+
+        document.getElementById("resumeUpload").addEventListener("change", function() {
+            document.getElementById("setup").classList.remove("hidden");
+            document.getElementById("interview").classList.remove("hidden");
+            document.getElementById("question").innerText = questions[currentQuestionIndex];
+        });
+
+        function prevQuestion() {
+            currentQuestionIndex = (currentQuestionIndex - 1 + questions.length) % questions.length;
+            document.getElementById("question").innerText = questions[currentQuestionIndex];
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+            document.getElementById("question").innerText = questions[currentQuestionIndex];
+        }
+
+        function submitResponse() {
+            let feedbackOptions = [
+                "Great response! Try to include specific achievements.",
+                "Well done! Adding measurable results could enhance your answer.",
+                "Impressive! Consider mentioning any quantifiable outcomes."
+            ];
+            let suggestedAnswersOptions = [
+                "I am a passionate professional dedicated to delivering high-quality results.",
+                "With my expertise, I am confident in achieving great outcomes.",
+                "I have a strong analytical mindset and a collaborative spirit."
+            ];
+
+            document.getElementById("feedbackText").innerText = feedbackOptions[Math.floor(Math.random() * feedbackOptions.length)];
+            document.getElementById("suggestedAnswers").innerText = suggestedAnswersOptions[Math.floor(Math.random() * suggestedAnswersOptions.length)];
+            document.getElementById("feedback").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>

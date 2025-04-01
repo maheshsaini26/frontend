@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-scale=1, initial-scale=1.0">
+    <title>Professional Resume Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="block.css">
+</head>
+<body>
+
+<div class="resume-container">
+    <div class="section">
+        <h2>General Information</h2>
+        <div class="info">
+            <label for="project-name">Project Name</label>
+            <input type="text" id="project-name" placeholder="My Updated Resume">
+            <label for="project-description">Description</label>
+            <textarea id="project-description" placeholder="Describe your resume's purpose"></textarea>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Personal Info</h2>
+        <div class="info">
+            <label for="photo">Your Photo</label>
+            <input type="file" id="photo">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name">
+            <label for="job-title">Job Title</label>
+            <input type="text" id="job-title">
+            <label for="city">City & Country</label>
+            <input type="text" id="city">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone">
+            <label for="email">Email ID</label>
+            <input type="email" id="email">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Skills</h2>
+        <div class="info">
+            <label for="skills">Skills (Separate with commas)</label>
+            <input type="text" id="skills" placeholder="Skill 1, Skill 2, Skill 3">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Work Experience / Internship</h2>
+        <div class="info">
+            <label for="experience-type">Experience Type</label>
+            <select id="experience-type">
+                <option value="work">Work Experience</option>
+                <option value="internship">Internship</option>
+            </select>
+            <label for="designation">Designation</label>
+            <input type="text" id="designation" placeholder="Designation">
+            <label for="company-name">Company Name</label>
+            <input type="text" id="company-name" placeholder="Company Name">
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date">
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date">
+            <textarea id="responsibilities" placeholder="Roles and Responsibilities"></textarea>
+        </div>
+        <button>Add Work/Internship Experience</button>
+    </div>
+
+    <div class="section">
+        <h2>Education / Certification</h2>
+        <div class="info">
+            <label for="education-type">Education Type</label>
+            <select id="education-type">
+                <option value="degree">Degree</option>
+                <option value="certificate">Certificate Course</option>
+            </select>
+            <label for="degree">Degree / Certificate</label>
+            <input type="text" id="degree" placeholder="Degree or Certificate Name">
+            <label for="college">College / Institute</label>
+            <input type="text" id="college" placeholder="College / Institute Name">
+            <label for="university">University</label>
+            <input type="text" id="university" placeholder="University Name">
+            <input type="date" id="edu-start-date" placeholder="Start Date">
+            <input type="date" id="edu-end-date" placeholder="End Date">
+        </div>
+        <button>Add Education/Certification</button>
+    </div>
+
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <div class="info">
+            <label for="summary">Write a short introduction</label>
+            <textarea id="summary" placeholder="Write a brief summary about yourself"></textarea>
+            <button>Generate with AI</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Declaration</h2>
+        <div class="info">
+            <label for="date">Date</label>
+            <input type="date" id="date">
+            <label for="place">Place</label>
+            <input type="text" id="place" placeholder="Place of Declaration">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your Name">
+            <label for="signature">Signature</label>
+            <input type="file" id="signature">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

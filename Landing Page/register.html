@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+        h2 {
+            color: #333;
+        }
+        .input-field, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .input-field:focus, select:focus {
+            outline: none;
+            border-color: #0073b1;
+            box-shadow: 0 0 5px rgba(0, 115, 177, 0.5);
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .social-buttons button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .social-buttons .linkedin { background-color: #0073b1; }
+        .social-buttons .google { background-color: #db4437; }
+        .social-buttons .github { background-color: #333; }
+        .social-buttons button:hover {
+            opacity: 0.8;
+        }
+        button[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+        p {
+            font-size: 14px;
+        }
+        a {
+            color: #0073b1;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 480px) {
+            .social-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Employee Registration</h2>
+        <div class="social-buttons">
+            <button class="linkedin">LinkedIn</button>
+            <button class="google">Google</button>
+            <button class="github">GitHub</button>
+        </div>
+        <form id="registrationForm">
+            <input class="input-field" type="text" name="fullName" placeholder="Full Name" required>
+            <input class="input-field" type="date" name="dob" required>
+            <select name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <input class="input-field" type="tel" name="mobile" placeholder="Mobile Number" required>
+            <button type="button" onclick="sendOTP('mobile')">Send OTP</button>
+            <input class="input-field" type="text" name="otpMobile" placeholder="Enter OTP" required>
+            <input class="input-field" type="email" name="email" placeholder="Email" required>
+            <button type="button" onclick="sendOTP('email')">Send OTP</button>
+            <input class="input-field" type="text" name="otpEmail" placeholder="Enter OTP" required>
+            <input class="input-field" type="password" name="password" placeholder="Password" required>
+            <input class="input-field" type="password" name="confirmPassword" placeholder="Confirm Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let password = document.querySelector('[name="password"]').value;
+            let confirmPassword = document.querySelector('[name="confirmPassword"]').value;
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            alert('Registration successful!');
+        });
+        function sendOTP(type) {
+            alert(`OTP sent to your ${type}`);
+        }
+    </script>
+</body>
+</html>

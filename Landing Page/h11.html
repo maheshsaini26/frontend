@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koluvu Jobs</title>
+    <style>
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fa7f04;
+            padding: 8px 3%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-container img {
+            height: 28px;
+            width: auto;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26px;
+            height: 18px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger-line {
+            display: block;
+            height: 2.5px;
+            width: 100%;
+            background-color: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* Navigation Menu */
+        .menu-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 10px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .menu a:hover {
+            opacity: 0.8;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .auth-buttons a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            background-color: green;
+            transition: background-color 0.3s;
+        }
+
+        .auth-buttons a:hover {
+            background-color: #006400;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto 0;
+            background: white;
+            padding: 20px;
+            border-radius: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            flex: 1;
+        }
+
+        #search {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .categories button {
+            padding: 8px 12px;
+            border: none;
+            background: #e0e0e0;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: background-color 0.3s;
+        }
+
+        .categories button:hover {
+            background: #bdbdbd;
+        }
+
+        .job-listings {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .job-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .job-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-card h2 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .job-card p {
+            margin-bottom: 6px;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .text-blue {
+            color: #0066cc;
+        }
+
+        .job-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+
+        .salary {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .experience {
+            color: #d32f2f;
+        }
+
+        .apply-btn {
+            display: block;
+            margin-top: 15px;
+            background: green;
+            color: white;
+            padding: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 0.95rem;
+            transition: background-color 0.3s;
+        }
+
+        .apply-btn:hover {
+            background: #006400;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #008000;
+            color: white;
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer > div {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .footer h3 {
+            border-bottom: 2px solid #ffa500;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer a, .footer span {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .footer a:hover {
+            color: #ffa500;
+        }
+
+        .copyright {
+            text-align: center;
+            background-color: #ffa500;
+            color: white;
+            padding: 12px;
+            font-size: 0.85rem;
+            width: 100%;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            /* Navigation */
+            .hamburger {
+                display: flex;
+            }
+            
+            .menu-container {
+                position: fixed;
+                top: 0; /* Changed from 56px to 0 to remove the gap */
+                left: 0;
+                right: 0;
+                background-color: #fa7f04;
+                flex-direction: column;
+                align-items: center;
+                padding: 70px 5% 15px; /* Added top padding to account for navbar height */
+                gap: 15px;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+            
+            .menu-container.active {
+                transform: translateY(0);
+            }
+            
+            .menu {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                gap: 12px;
+            }
+            
+            .auth-buttons {
+                width: 100%;
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .auth-buttons a {
+                width: 100%;
+                text-align: center;
+                padding: 8px;
+            }
+            
+            /* Hamburger animation */
+            .hamburger.active .hamburger-line:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+            
+            .hamburger.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .hamburger-line:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+            
+            /* Main content adjustment */
+            .container {
+                margin-top: 56px;
+                padding: 15px;
+            }
+            
+            .job-listings {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Centered Footer for Mobile */
+            .footer {
+                flex-direction: column;
+                gap: 25px;
+                text-align: center;
+                padding: 25px 10%;
+            }
+            
+            .footer > div {
+                min-width: 100%;
+            }
+            
+            .footer h3 {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 6px 3%;
+            }
+            
+            .logo {
+                font-size: 0.95rem;
+            }
+            
+            .logo-container img {
+                height: 24px;
+            }
+            
+            .hamburger {
+                width: 24px;
+                height: 16px;
+            }
+            
+            .container {
+                margin-top: 52px;
+                padding: 12px;
+            }
+            
+            #search {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+            }
+            
+            .footer {
+                padding: 20px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with responsive hamburger menu -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="img/koluvu.jpeg" alt="Koluvu" width="40">
+                <a href="#" class="logo">Koluvu</a>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+            
+            <div class="menu-container" id="menuContainer">
+                <div class="menu">
+                    <a href="index.html">Home</a>
+                    <a href="jobs.html">Jobs</a>
+                    <a href="companies.html">Companies</a>
+                    <a href="services.html">Services</a>
+                    <a href="hrthreads.html">HR Threads</a>
+                    <a href="trainingregistration.html">Training Institute</a>
+                    <a href="#">Govt Jobs</a>
+                </div>
+                
+                <div class="auth-buttons">
+                    <a href="employee.html" class="login">Employee</a>
+                    <a href="/frontend/Employer Registration (1)/Employer Registration.html" class="register">Employer</a>
+                    <a href="partnerregister.html" class="partner">Partner</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <input type="text" id="search" placeholder="Search for jobs..." onkeyup="filterJobs()">
+        <div class="categories" id="categories"></div>
+        <div class="job-listings" id="job-listings"></div>
+    </div>
+
+    <!-- Footer - Responsive and centered on mobile -->
+    <footer class="footer">
+        <div>
+            <h3>Company</h3>
+            <a href="#">About Koluvu</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Vulnerability Disclosure</a>
+            <a href="#">FAQs</a>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#">Download App</a>
+            <a href="#">Free Job Alerts</a>
+            <a href="#">Careers</a>
+        </div>
+
+        <div>
+            <h3>Services</h3>
+            <a href="#">Resume Building</a>
+            <a href="#">AI Mock Interviews</a>
+            <a href="#">ATS Optimization</a>
+        </div>
+
+        <div>
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter (X)</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+            <a href="#">WhatsApp</a>
+        </div>
+        
+        <div>
+            <h3>Contact Us</h3>
+            <span>H-no 8-3-230/1/a/b V Giri, Safi Residency, 2nd Floor, Yousufguda, Hyderabad, Telangana, India, 500045</span>
+            <a href="mailto:support@koluvu.com">support@koluvu.com</a>
+            <a href="tel:9866875709">+91 9866875709</a>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        © 2025 Koluvu.com | Powered by Bhuvih HR Solutions Pvt. Ltd. | All Rights Reserved
+    </div>
+
+    <script>
+        // Job Data
+        const jobCategories = [
+            "IT & Software", "HR & Recruitment", "Sales & Marketing",
+            "Finance & Accounting", "Operations", "Banking Services",
+            "Healthcare", "Education", "Customer Support",
+            "Retail", "Real Estate", "Engineering",
+            "Construction", "Legal", "Media",
+            "Hospitality", "Logistics", "Telecom",
+            "Automobile", "FMCG"
+        ];
+
+        const jobListings = [
+            { 
+                title: "Front-End Developer", 
+                company: "ABC Tech", 
+                location: "Hyderabad", 
+                type: "Full-Time",
+                salary: "₹6-10 LPA",
+                experience: "2-4 years"
+            },
+            { 
+                title: "Back-End Developer", 
+                company: "XYZ Tech", 
+                location: "Bangalore", 
+                type: "Full-Time",
+                salary: "₹8-12 LPA",
+                experience: "3-5 years"
+            },
+            { 
+                title: "Full Stack Developer", 
+                company: "DevHub", 
+                location: "Mumbai", 
+                type: "Remote",
+                salary: "₹10-15 LPA",
+                experience: "4-6 years"
+            },
+            { 
+                title: "Software Engineer", 
+                company: "Tech Innovators", 
+                location: "Delhi", 
+                type: "Full-Time",
+                salary: "₹5-8 LPA",
+                experience: "1-3 years"
+            },
+            { 
+                title: "DevOps Engineer", 
+                company: "Cloud Solutions", 
+                location: "Chennai", 
+                type: "Full-Time",
+                salary: "₹9-14 LPA",
+                experience: "3-6 years"
+            },
+            { 
+                title: "Data Scientist", 
+                company: "AI Labs", 
+                location: "Pune", 
+                type: "Full-Time",
+                salary: "₹12-18 LPA",
+                experience: "5-8 years"
+            },
+            { 
+                title: "Cyber Security", 
+                company: "SecureNet", 
+                location: "Hyderabad", 
+                type: "Full-Time",
+                salary: "₹7-11 LPA",
+                experience: "2-5 years"
+            }
+        ];
+
+        // Display Functions
+        function displayCategories() {
+            const categoryContainer = document.getElementById("categories");
+            categoryContainer.innerHTML = "";
+            jobCategories.forEach(category => {
+                const button = document.createElement("button");
+                button.textContent = category;
+                button.addEventListener("click", () => filterByCategory(category));
+                categoryContainer.appendChild(button);
+            });
+        }
+
+        function displayJobs(jobs) {
+            const jobContainer = document.getElementById("job-listings");
+            jobContainer.innerHTML = "";
+            jobs.forEach(job => {
+                const jobCard = document.createElement("div");
+                jobCard.className = "job-card";
+                jobCard.innerHTML = `
+                    <h2>${job.title}</h2>
+                    <p>${job.company} - ${job.location}</p>
+                    <p class="text-blue">${job.type}</p>
+                    <div class="job-details">
+                        <span class="salary">${job.salary}</span>
+                        <span class="experience">Exp: ${job.experience}</span>
+                    </div>
+                    <button class="apply-btn">Apply Now</button>
+                `;
+                jobContainer.appendChild(jobCard);
+            });
+        }
+
+        function filterJobs() {
+            const searchValue = document.getElementById("search").value.toLowerCase();
+            const filtered = jobListings.filter(job => 
+                job.title.toLowerCase().includes(searchValue) || 
+                job.company.toLowerCase().includes(searchValue) ||
+                job.location.toLowerCase().includes(searchValue)
+            );
+            displayJobs(filtered);
+        }
+
+        function filterByCategory(category) {
+            // In a real app, this would filter by category
+            // For demo, we'll just show all jobs
+            displayJobs(jobListings);
+        }
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const menuContainer = document.getElementById('menuContainer');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            menuContainer.classList.toggle('active');
+            
+            // Toggle body scroll when menu is open
+            if (menuContainer.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close menu when clicking on a link
+        const menuLinks = document.querySelectorAll('.menu a, .auth-buttons a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    hamburger.classList.remove('active');
+                    menuContainer.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // Initialize page
+        window.onload = function() {
+            displayCategories();
+            displayJobs(jobListings);
+            
+            // Close menu if clicked outside
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768 && 
+                    !e.target.closest('.menu-container') && 
+                    !e.target.closest('.hamburger')) {
+                    hamburger.classList.remove('active');
+                    menuContainer.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        };
+    </script>
+</body>
+</html>

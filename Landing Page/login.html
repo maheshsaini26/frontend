@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Authentication</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.auth-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.auth-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.action-links {
+    margin-top: 10px;
+}
+
+.action-links button {
+    width: auto;
+    background: none;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+}
+
+.action-links button:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+    </style>
+
+    <script>
+        function showSection(section) {
+    document.getElementById('login-section').classList.add('hidden');
+    document.getElementById('forgot-section').classList.add('hidden');
+    document.getElementById('register-section').classList.add('hidden');
+
+    document.getElementById(section + '-section').classList.remove('hidden');
+}
+
+// Handling form submissions (basic)
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Login functionality to be implemented.');
+});
+
+document.getElementById('forgot-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Password reset functionality to be implemented.');
+});
+
+document.getElementById('register-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Registration functionality to be implemented.');
+});
+
+    </script>
+</head>
+<body>
+
+    <div class="auth-container">
+        <video autoplay loop muted class="background-video">
+            <source src="/videos/job-preparation.mp4" type="video/mp4">
+        </video>
+        <div class="auth-box">
+            <div id="login-section" class="form-section">
+                <h2>Employee Login</h2>
+                <form id="login-form">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <div class="action-links">
+                    <button onclick="showSection('forgot')">Forgot Password?</button>
+                    <button onclick="showSection('register')">Register</button>
+                </div>
+            </div>
+
+            <div id="forgot-section" class="form-section hidden">
+                <h2>Forgot Credentials</h2>
+                <form id="forgot-form">
+                    <input type="email" name="email" placeholder="Enter your registered email" required>
+                    <button type="submit">Reset Password</button>
+                </form>
+                <div class="action-links">
+                    <button onclick="showSection('login')">Back to Login</button>
+                </div>
+            </div>
+
+            <div id="register-section" class="form-section hidden">
+                <h2>Employee Registration</h2>
+                <form id="register-form">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                </form>
+                <div class="action-links">
+                    <button onclick="showSection('login')">Back to Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

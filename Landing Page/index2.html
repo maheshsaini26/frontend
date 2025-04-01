@@ -180,62 +180,7 @@
       .navcentrefont {
         font-size: 20px;
       }
-      .jobs-grid {
-        display: grid;
-        grid-template-columns: repeat(
-          auto-fit,
-          minmax(20px, 1fr)
-        ); /* Better fit for cards */
-        gap: 15px; /* Increased spacing */
-      }
-
-      .job-card {
-        background: white;
-        padding: 15px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-      }
-
-      .job-card:hover {
-        transform: translateY(-5px); /* Slight lift effect */
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-      }
-
-      .job-card p {
-        margin: 8px 0;
-        font-size: 16px;
-        color: #333;
-      }
-
-      .salary {
-        color: #28a745;
-        font-weight: bold;
-        font-size: 18px;
-      }
-
-      .section-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .section-title {
-        font-size: 22px;
-        color: #6a0dad;
-        font-weight: bold;
-      }
-
-      .view-all {
-        color: #007bff;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: bold;
-      }
-
-      .margin {
-        margin-top: 150px;
-      }
+      
     </style>
   </head>
 
@@ -258,7 +203,7 @@
         <div class="auth-buttons">
           <a href="employee.html" class="login">Employee</a>
           <a
-            href="/frontend/Employer dashboard/employerdashboard.html"
+            href="/frontend/Employer Registration (1)/Employer Registration.html"
             class="register"
             >Employer</a
           >
@@ -302,169 +247,169 @@
 
         <div class="row">
           <!-- Top Fresher Jobs -->
-          <div class="section">
-            <div class="section-header">
-              <h3 class="section-title">Top Fresher Jobs</h3>
-              <a href="/all-jobs" class="view-all">View All</a>
+          <div class="category-row">
+            <h3 class="purple">Top Fresher Jobs</h3>
+            <div class="category-column">
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
+              </div>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
+              </div>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
+              </div>
             </div>
-            <div class="jobs-grid">
-              <div class="job-card">
-                <p><strong>Company:</strong> XYZ Solutions</p>
-                <p><strong>Location:</strong> Remote</p>
-                <p><strong>Job Type:</strong> Contract</p>
-                <p class="salary"><strong>Salary:</strong> $60,000/year</p>
+            <div class="view-bar">
+              <a href="#"><button>View More Top Fresher Jobs</button></a>
+            </div>
+          </div>
+
+          <!-- Top Experience Jobs -->
+          <div class="category-row">
+            <h3 class="purple">Top Experience Jobs</h3>
+            <div class="category-column">
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
               </div>
-              <div class="job-card">
-                <p><strong>Company:</strong> ABC Tech</p>
-                <p><strong>Location:</strong> On-site</p>
-                <p><strong>Job Type:</strong> Full-Time</p>
-                <p class="salary"><strong>Salary:</strong> $55,000/year</p>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
               </div>
-              <div class="job-card">
-                <p><strong>Company:</strong> FreshStart Inc</p>
-                <p><strong>Location:</strong> Hybrid</p>
-                <p><strong>Job Type:</strong> Internship</p>
-                <p class="salary"><strong>Salary:</strong> $30,000/year</p>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
               </div>
             </div>
           </div>
-          <div class="margin">
-            <div class="section">
-              <div class="section-header">
-                <h3 class="section-title">Top Experience Jobs</h3>
-                <a href="/all-jobs" class="view-all">View All</a>
+          <div class="category-row">
+            <h3 class="purple">Top Work from Jobs</h3>
+            <div class="category-column">
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
               </div>
-              <div class="jobs-grid">
-                <div class="job-card">
-                  <p><strong>Company:</strong> XYZ Solutions</p>
-                  <p><strong>Location:</strong> Remote</p>
-                  <p><strong>Job Type:</strong> Contract</p>
-                  <p class="salary"><strong>Salary:</strong> $60,000/year</p>
-                </div>
-                <div class="job-card">
-                  <p><strong>Company:</strong> ABC Tech</p>
-                  <p><strong>Location:</strong> On-site</p>
-                  <p><strong>Job Type:</strong> Full-Time</p>
-                  <p class="salary"><strong>Salary:</strong> $55,000/year</p>
-                </div>
-                <div class="job-card">
-                  <p><strong>Company:</strong> FreshStart Inc</p>
-                  <p><strong>Location:</strong> Hybrid</p>
-                  <p><strong>Job Type:</strong> Internship</p>
-                  <p class="salary"><strong>Salary:</strong> $30,000/year</p>
-                </div>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
+              </div>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
               </div>
             </div>
           </div>
-          <div class="margin">
-            <div class="section">
-              <div class="section-header">
-                <h3 class="section-title">Top Work from Jobs</h3>
-                <a href="/all-jobs" class="view-all">View All</a>
+          <div class="category-row">
+            <h3 class="purple">Top Internship Opportunities</h3>
+            <div class="category-column">
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
               </div>
-              <div class="jobs-grid">
-                <div class="job-card">
-                  <p><strong>Company:</strong> XYZ Solutions</p>
-                  <p><strong>Location:</strong> Remote</p>
-                  <p><strong>Job Type:</strong> Contract</p>
-                  <p class="salary"><strong>Salary:</strong> $60,000/year</p>
-                </div>
-                <div class="job-card">
-                  <p><strong>Company:</strong> ABC Tech</p>
-                  <p><strong>Location:</strong> On-site</p>
-                  <p><strong>Job Type:</strong> Full-Time</p>
-                  <p class="salary"><strong>Salary:</strong> $55,000/year</p>
-                </div>
-                <div class="job-card">
-                  <p><strong>Company:</strong> FreshStart Inc</p>
-                  <p><strong>Location:</strong> Hybrid</p>
-                  <p><strong>Job Type:</strong> Internship</p>
-                  <p class="salary"><strong>Salary:</strong> $30,000/year</p>
-                </div>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
+              </div>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
               </div>
             </div>
           </div>
-          <div class="margin">
-            <div class="section">
-              <div class="section-header">
-                <h3 class="section-title">Top Internship Opportunities</h3>
-                <a href="/all-jobs" class="view-all">View All</a>
+          <div class="category-row">
+            <h3 class="purple">Top Training Institutes</h3>
+            <div class="category-column">
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
               </div>
-              <div class="jobs-grid">
-                <div class="job-card">
-                  <p><strong>Company:</strong> XYZ Solutions</p>
-                  <p><strong>Location:</strong> Remote</p>
-                  <p><strong>Job Type:</strong> Contract</p>
-                  <p class="salary"><strong>Salary:</strong> $60,000/year</p>
-                </div>
-                <div class="job-card">
-                  <p><strong>Company:</strong> ABC Tech</p>
-                  <p><strong>Location:</strong> On-site</p>
-                  <p><strong>Job Type:</strong> Full-Time</p>
-                  <p class="salary"><strong>Salary:</strong> $55,000/year</p>
-                </div>
-                <div class="job-card">
-                  <p><strong>Company:</strong> FreshStart Inc</p>
-                  <p><strong>Location:</strong> Hybrid</p>
-                  <p><strong>Job Type:</strong> Internship</p>
-                  <p class="salary"><strong>Salary:</strong> $30,000/year</p>
-                </div>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
+              </div>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
               </div>
             </div>
           </div>
-          <div class="margin">
-            <div class="section">
-              <div class="section-header">
-                <h3 class="section-title">Top Training Institutes</h3>
-                <a href="/all-jobs" class="view-all">View All</a>
+          <div class="category-row">
+            <h3 class="purple">Top Training Institutes</h3>
+            <div class="category-column">
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
               </div>
-              <div class="jobs-grid">
-                <div class="job-card">
-                  <p><strong>Company:</strong> XYZ Solutions</p>
-                  <p><strong>Location:</strong> Remote</p>
-                  <p><strong>Job Type:</strong> Contract</p>
-                  <p class="salary"><strong>Salary:</strong> $60,000/year</p>
-                </div>
-                <div class="job-card">
-                  <p><strong>Company:</strong> ABC Tech</p>
-                  <p><strong>Location:</strong> On-site</p>
-                  <p><strong>Job Type:</strong> Full-Time</p>
-                  <p class="salary"><strong>Salary:</strong> $55,000/year</p>
-                </div>
-                <div class="job-card">
-                  <p><strong>Company:</strong> FreshStart Inc</p>
-                  <p><strong>Location:</strong> Hybrid</p>
-                  <p><strong>Job Type:</strong> Internship</p>
-                  <p class="salary"><strong>Salary:</strong> $30,000/year</p>
-                </div>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
+              </div>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
               </div>
             </div>
           </div>
-          <div class="margin">
-            <div class="section">
-              <div class="section-header">
-                <h3 class="section-title">Top Companies</h3>
-                <a href="/all-jobs" class="view-all">View All</a>
+          <div class="category-row">
+            <h3 class="purple">Top Companies</h3>
+            <div class="category-column">
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
               </div>
-              <div class="jobs-grid">
-                <div class="job-card">
-                  <p><strong>Company:</strong> XYZ Solutions</p>
-                  <p><strong>Location:</strong> Remote</p>
-                  <p><strong>Job Type:</strong> Contract</p>
-                  <p class="salary"><strong>Salary:</strong> $60,000/year</p>
-                </div>
-                <div class="job-card">
-                  <p><strong>Company:</strong> ABC Tech</p>
-                  <p><strong>Location:</strong> On-site</p>
-                  <p><strong>Job Type:</strong> Full-Time</p>
-                  <p class="salary"><strong>Salary:</strong> $55,000/year</p>
-                </div>
-                <div class="job-card">
-                  <p><strong>Company:</strong> FreshStart Inc</p>
-                  <p><strong>Location:</strong> Hybrid</p>
-                  <p><strong>Job Type:</strong> Internship</p>
-                  <p class="salary"><strong>Salary:</strong> $30,000/year</p>
-                </div>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
+              </div>
+              <div class="job-box">
+                <p>Company: XYZ Solutions</p>
+                <p>Location: Remote</p>
+                <p>Job Type: Contract</p>
+                <p>Salary: $60,000/year</p>
               </div>
             </div>
           </div>
@@ -472,7 +417,7 @@
       </div>
 
       <div class="right-section">
-        <br /><br />
+        <br />
 
         <video src="video/video2.mp4" controls></video><br />
         <h3>Internship Opportunity</h3>
@@ -657,9 +602,7 @@
         <a href="#">Twitter (X)</a>
         <a href="#">LinkedIn</a>
         <a href="#">Instagram</a>
-        <a href="https://whatsapp.com/channel/0029VbA9OVbBqbr1gugLVb0s"
-          >WhatsApp Channel</a
-        >
+        <a href="https://whatsapp.com/channel/0029VbA9OVbBqbr1gugLVb0s">WhatsApp Channel</a>
       </div>
       <div>
         <h3>Contact us</h3>
@@ -679,4 +622,5 @@
 
     <script src="script.js"></script>
   </body>
+  
 </html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .content {
+            max-width: 700px;
+            margin: auto;
+        }
+        .section {
+            margin-bottom: 40px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .section-title {
+            font-size: 22px;
+            color: #6a0dad;
+            font-weight: bold;
+        }
+        .view-all {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .job-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .job-card p {
+            margin: 5px 0;
+        }
+        .salary {
+            color: #28a745;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="content" id="jobSections"></div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = [
+                { title: "Top Fresher Jobs", jobs: [
+                    { company: "XYZ Solutions", location: "Remote", type: "Contract", salary: "$60,000/year" },
+                    { company: "ABC Tech", location: "On-site", type: "Full-Time", salary: "$55,000/year" },
+                    { company: "FreshStart Inc", location: "Hybrid", type: "Internship", salary: "$30,000/year" }
+                ]},
+                { title: "Top Experience Jobs", jobs: [
+                    { company: "ABC Corp", location: "On-site", type: "Full-Time", salary: "$80,000/year" },
+                    { company: "Tech Solutions", location: "Remote", type: "Contract", salary: "$75,000/year" },
+                    { company: "Innovate Ltd", location: "Hybrid", type: "Full-Time", salary: "$85,000/year" }
+                ]},
+                { title: "Top Work from Jobs", jobs: [
+                    { company: "Remote Corp", location: "Remote", type: "Full-Time", salary: "$70,000/year" },
+                    { company: "FlexTech", location: "Hybrid", type: "Contract", salary: "$65,000/year" },
+                    { company: "Virtual Inc", location: "Remote", type: "Part-Time", salary: "$40,000/year" }
+                ]},
+                { title: "Top Internship Opportunities", jobs: [
+                    { company: "Startup X", location: "On-site", type: "Internship", salary: "$25,000/year" },
+                    { company: "Growth Inc", location: "Remote", type: "Internship", salary: "$20,000/year" },
+                    { company: "Tech Launch", location: "Hybrid", type: "Internship", salary: "$28,000/year" }
+                ]},
+                { title: "Top Training Institutes", jobs: [
+                    { company: "SkillUp", location: "Online", type: "Training", salary: "N/A" },
+                    { company: "LearnHub", location: "On-site", type: "Training", salary: "N/A" },
+                    { company: "EduTech", location: "Hybrid", type: "Training", salary: "N/A" }
+                ]},
+                { title: "Top Companies", jobs: [
+                    { company: "Global Tech", location: "On-site", type: "Full-Time", salary: "$100,000/year" },
+                    { company: "Innovate AI", location: "Remote", type: "Contract", salary: "$90,000/year" },
+                    { company: "NextGen Solutions", location: "Hybrid", type: "Full-Time", salary: "$95,000/year" }
+                ]}
+            ];
+
+            const jobSections = document.getElementById("jobSections");
+
+            sections.forEach(section => {
+                const sectionDiv = document.createElement("div");
+                sectionDiv.classList.add("section");
+
+                sectionDiv.innerHTML = `
+                    <div class="section-header">
+                        <h3 class="section-title">${section.title}</h3>
+                        <a href="/all-jobs" class="view-all">View All</a>
+                    </div>
+                    <div class="jobs-grid">
+                        ${section.jobs.map(job => `
+                            <div class="job-card">
+                                <p><strong>Company:</strong> ${job.company}</p>
+                                <p><strong>Location:</strong> ${job.location}</p>
+                                <p><strong>Job Type:</strong> ${job.type}</p>
+                                <p class="salary"><strong>Salary:</strong> ${job.salary}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                
+                jobSections.appendChild(sectionDiv);
+            });
+        });
+    </script>
+</body>
+</html>

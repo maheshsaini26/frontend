@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= jobTitle %> - Job Posting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .card {
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        .card-header {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        h4, h5 {
+            margin-top: 15px;
+            color: #007BFF;
+            font-size: 14px;
+        }
+        p, li {
+            font-size: 16px;
+            color: #555;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        input, select {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        .btn-apply {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-apply:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2><%= jobTitle %></h2>
+                <p><%= companyName %> - Rating: <%= companyRating %></p>
+            </div>
+            <div class="card-body">
+                <h4>Summary</h4>
+                <p>Experience: <%= experience %> years | Location: <%= location %> | Job Type: <%= jobType %> | Package: <%= package %> | Posted on: <%= postedDate %> | Vacancies: <%= vacancies %> | Applications Received: <%= applicationsReceived %></p>
+                <h4>Job Match Score</h4>
+                <p><%= jobMatchScore %>% Match</p>
+
+                <h4>About the Company</h4>
+                <p><%= companyDescription %></p>
+
+                <h4>Position Overview</h4>
+                <p><%= positionOverview %></p>
+
+                <h4>Roles and Responsibilities</h4>
+                <ul>
+                    <% rolesAndResponsibilities.forEach(function(role) { %>
+                        <li><%= role %></li>
+                    <% }); %>
+                </ul>
+
+                <h4>Preferred Candidate Profile</h4>
+                <p><%= candidateProfile %></p>
+
+                <h4>Perks and Benefits</h4>
+                <ul>
+                    <% perksAndBenefits.forEach(function(perk) { %>
+                        <li><%= perk %></li>
+                    <% }); %>
+                </ul>
+
+                <h4>Work Location</h4>
+                <p><%= workLocation %></p>
+
+                <h4>KPIs & Success Metrics (First 90 Days)</h4>
+                <p><%= kpis %></p>
+
+                <h4>Why Join Us</h4>
+                <p><%= whyJoinUs %></p>
+
+                <h4>How to Apply</h4>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name"><br>
+                    <label for="email">Email ID:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email"><br>
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Your Mobile Number"><br>
+                    <button type="submit" class="btn-apply">Apply Now</button>
+                </form>
+
+                <h4>Role Details</h4>
+                <p><strong>Role:</strong> <%= role %></p>
+                <p><strong>Department:</strong> <%= department %></p>
+                <p><strong>Preferred Industry:</strong> <%= preferredIndustry %></p>
+                <p><strong>Employment Type:</strong> <%= employmentType %></p>
+                <p><strong>Role Category:</strong> <%= roleCategory %></p>
+
+                <h4>Key Skills</h4>
+                <ul>
+                    <% keySkills.forEach(function(skill) { %>
+                        <li><%= skill %></li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
